@@ -81,8 +81,6 @@
             if( !isset ( $_SESSION[$userCredits] ) )
                 throw new Exception("Brak danych użytkownika");
 
-            
-
             // O pliku
             // $fileName   = $_FILES[$file_AddFileForm]["name"];
             $fileDesc   = $_POST[$fileDescr_AddFileForm];

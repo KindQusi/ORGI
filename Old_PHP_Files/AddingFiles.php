@@ -70,7 +70,7 @@
             // O dodającym
             $user = $_SESSION[$userCredits];
             //unserialize($user);
-            $userID = $user.GetUserId();
+            //$userID = $user.GetUserId();
 
             // O pliku
             $fileName   = $_FILES[$file_AddFileForm]["name"];
