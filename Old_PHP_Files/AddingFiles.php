@@ -2,13 +2,9 @@
     /*
         Gdy otrzymamy plik z Post:
         1. Sprawdzić co chcemy. Jaki typ pliku , dla każdego typu osobna tabela zdjęcia,teksty itp
-            1a Sprawdzić czy nie mamy takiego zdjęcia ? Bitowo? 
-        2. Sprawdzić czy nie mamy już takiego pliku w bazie ( nazwa + id_user ?)
-            2a Czy dodajacy nie dodal juz takiego zdjecia?
-            2b Czy inni nie dodali takiego zdjecia? Po nazwie dla wynikow porownac bitowo?
+        2. Sprawdzić czy nie mamy już takiego pliku na serwerze jak i w bazie
         3. Próbować dodać info do tabeli
-        4. Gdy dodamy, pobieramy id 
-        5. zapisać plik na serwerze
+        4. Gdy dodamy, zapisać plik na serwerze
             4a. Jak się nie uda spróbować usunąć wpis w bazie danych
 
         Nazwy plików -> tylko identyfikacyjnie
@@ -46,45 +42,38 @@
             }
 
             // Gdy chcemy dodac coś czego nie mamy wywalamy error'a
-            if ($target_dir == null || $target_table == null)
+            if ($target_dir == null)
                 throw new Exception("Brak lub zła kategoria");
-            
+
+            // 2.
+            // Sprawdzamy czy plik o takiej nazwie istnieje
+            $target_file = $target_dir . basename($_FILES[$fileAddFileForm]["name"]);
+            if ( file_exists($target_file) )
+                throw new Exception("Ten plik już wiednieje w naszej bazie");
+
             // Do łączenia z bazą danych 
             $db = new Database();
             
             // Sprawdzamy czy jest on w bazach danych
-            // Zbieramy potrzebne dane do wpisu
-            // O dodającym
-            $user = $_SESSION[$userCredits];
-            //unserialize($user);
-            $userID = $user.GetUserId();
-
-            $fileName = $_FILES[$file_AddFileForm]["name"];
-            $query = 
-            "SELECT 
-            `{$fileID_UploadsTable_Col}`
-            FROM 
-            `{$target_table}`
-            WHERE
-            `{$fileName_UploadsTable_Col}` = '{$fileName}'
-            AND
-            `{$userID_UploadsTable_Col}` = '{$userID}'
-            ";
-
-            // 2.
-            // Sprawdzamy czy mamy coś już takiego      
+            // Jeżeli nie jest zapisany na serwerze ale jest w bazie danych wpis o nim
+            $query = '';
             if ( $db->query($query) )
-                throw new Exception("Mamy juz taki plik");
+                throw new Exception("Dany plik widnieje w naszych bazach danych , jeżeli 
+                nie ma go dostępnego do pobrania skontaktuj się z administracją ");
 
             // 3.
             // Sprawdzamy czy mamy dane uzytkownika
             if( !isset ( $_SESSION[$userCredits] ) )
                 throw new Exception("Brak danych użytkownika");
 
-            
+            // Zbieramy potrzebne dane do wpisu
+            // O dodającym
+            $user = $_SESSION[$userCredits];
+            //unserialize($user);
+            $userID = $user.GetUserId();
 
             // O pliku
-            // $fileName   = $_FILES[$file_AddFileForm]["name"];
+            $fileName   = $_FILES[$file_AddFileForm]["name"];
             $fileDesc   = $_POST[$fileDescr_AddFileForm];
             $fileTag    = $_POST[$fileTag_AddFileForm];
             $fileTag1   = $_POST[$fileTag1_AddFileForm];
@@ -108,49 +97,17 @@
             '{$fileTag}','{$fileTag1}','{$fileTag2}',
             '{$fileTag3}','{$fileTag4}','{$fileTag5}'
             )"; 
+
             
+
             // Jeżeli nie uda się go dodać do bazy
             if (!$db->query($query))
                 throw new Exception("Brak połączenia z bazą. Proszę spóbować później");
 
             // 4.
-            // Wyszukujemy naszego dodanego np zdjęcia
-
-            $target_file == null;
-            $query = 
-            "SELECT 
-            `{$fileID_UploadsTable_Col}`
-            FROM 
-            `{$target_table}`
-            WHERE
-            `{$fileName_UploadsTable_Col}` = '{$fileName}'
-            AND
-            `{$userID_UploadsTable_Col}` = '{$userID}'
-            ";
-            // Prosimy o wynik
-            $record = $db->query($query);
-            // Sprawdzamy jego ID
-            if ( $record->num_rows > 0 && $Record->now_rows < 2)
-            {
-                while ($row = $record -> fetch_assoc() )
-                {
-                    // Bierzemy ID      
-                    $id = $row[$fileID_UploadsTable_Col];
-                    // Oddzielamy nazwę i rozszerzenie
-                    $temp = explode(".", $_FILES[$fileAddFileForm]["name"]);
-                    // Bierzemy ID i rozszerzenie
-                    $newfilename = $id . '.' . end($temp);
-                    // Robimy ścieżkę zapisu z nową nazwą
-                    $target_file = $target_dir . $newfilename;
-                }
-            }
-            else
-                throw new Exception("Nie uzyskaliśmy wyniku naszego wcześniejszego wrzutu");
-
-            // 5.
             // Wstawiamy plik 
             // Jak się nie uda usuwamy info z bazy o nim
-            if (! move_uploaded_file($_FILES[$fileAddFileForm]["name"],$target_file ) )
+            if (! move_uploaded_file($_FILES[$fileAddFileForm]["name"],$target_dir ) )
             {
                 // TODO
                 // Kwerenda do usuwania

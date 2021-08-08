@@ -68,6 +68,7 @@
     $sluchowiskoUploadTable  = 'Sluchowiska';
     $sluchowiskoUploadFolder = 'uploads/sluchowiska/';
 
+    $fileID_UploadsTable_Col     = 'ID';
     $userID_UploadsTable_Col     = 'ID_USER';
     $fileName_UploadsTable_Col   = 'NazwaPliku';
     $descr_UploadsTable_Col      = 'Opis';
