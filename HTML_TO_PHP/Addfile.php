@@ -32,7 +32,7 @@
             <option value="Zdjęcia">
             <option value="Filmy">
         </datalist>
-        <form class="form" action="addingFiles.php" method="POST">
+        <form class="form" action="../PHP SCIPTS/addingFiles.php" method="POST">
             <input class="addedfile" type="file" id="file">
             <p class="filename"></p>
             <p class="format"></p>

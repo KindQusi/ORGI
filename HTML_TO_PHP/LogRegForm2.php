@@ -21,7 +21,7 @@
         <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
     </header>
     <div class="container">
-        <form class="container__Login" action="POST">
+        <form class="container__Login" action="../PHP SCIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" value="login" name="userAction">
             <p class="container__title">Logowanie</p>
             <input class="container__input" type="text" placeholder="Email">
@@ -32,7 +32,7 @@
             <p>ORGI</p>
             <p>Otwarte Repoxytorium Gigabajtów Inspiracji</p>
         </div>
-        <form class="container__Registration" action="POST">
+        <form class="container__Registration" action="../PHP SCIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" class="userAction" name="registration">
             <p class="container__title">Rejestracja</p>
             <input class="container__input" type="text" placeholder="Login">
