@@ -13,7 +13,7 @@
     min-width: 150px;
     padding: 20px;
     height: 100%;
-    background-color: hsl(212, 14%, 74%);
+    background-color: #ffffff27;
     border-radius: 15px;
     display: grid;
     align-items: center;
@@ -22,7 +22,7 @@
 }
 
 .container__title {
-    color: hsl(0, 0%, 25%);
+    color: white;
     font-weight: bold;
 }
 
@@ -51,7 +51,7 @@
     min-width: 150px;
     padding: 20px;
     height: 100%;
-    background-color: hsl(212, 14%, 74%);
+    background-color: #ffffff27;
     border-radius: 15px;
     display: grid;
     align-items: center;
