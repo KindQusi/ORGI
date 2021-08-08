@@ -32,7 +32,7 @@
             <option value="Zdjęcia">
             <option value="Filmy">
         </datalist>
-        <form class="form" action="POST">
+        <form class="form" action="addingFiles.php" method="POST">
             <input class="addedfile" type="file" id="file">
             <p class="filename"></p>
             <p class="format"></p>
@@ -41,7 +41,7 @@
             <input type="button" class="addtagsbtn" value="dodaj tag">
             <p class="tagslist"></p>
             <textarea class="file__description" placeholder="">Opis tu jebnij</textarea>
-            <button class="uploadbtn">Wyślij plik na serwer</button>
+            <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
         </form>
     </div>
     <script src="/JS/CheckFormat.js"></script>
