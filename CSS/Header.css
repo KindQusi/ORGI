@@ -41,8 +41,8 @@
 }
 .header__button--logout{
     float: right;
-    margin-left: auto;
     border-radius: 0px;
+    justify-self: start;
 }
 .header__button--rightSide{
     border-left: 1px solid white;

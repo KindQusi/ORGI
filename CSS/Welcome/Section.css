@@ -69,7 +69,22 @@
   .align-right {
     transform: translateX(30%) scale(0.95);
   }
-
+  .hi{
+      justify-self: end;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+  }
+.hiuser{
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    width: 100px;
+    text-align: center;
+    border-right: 1px solid white;
+}
+.hiuser:disabled{
+    color: white;
+}
 
 
 .section__obout--text {
