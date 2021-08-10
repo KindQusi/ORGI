@@ -1,3 +1,15 @@
+<?php
+    require_once 'accounts.php' ;
+    //require_once 'database.php' ;
+    require_once 'GlobalVariables.php';
+    session_start();
+    if( isset($_SESSION[$isLogged]) )
+    {
+        header(''); // Uzytkownika cofamy do strony glownej/logowania
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -18,7 +30,11 @@
         <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
         <button class="header__button header__button--leftSide">Zaloguj się</button>
         <button class="header__button header__button--rightSide">Zarejestruj się</button>
-        <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
+        <!-- 
+        Logowanie i rejestracja dla osob nie zalogowanych, oznacza to ze
+        tutaj ten przycisk jest zbedny
+        <button class="header__button header__button--logout">Wyloguj się</button> 
+        -->
     </header>
     <div class="container">
         <form class="container__Login" action="../PHP SCIPTS/RegistrationOrLogin.php" method="POST">

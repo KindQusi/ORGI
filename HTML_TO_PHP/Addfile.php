@@ -1,4 +1,12 @@
 <?php
+    require_once 'accounts.php' ;
+    //require_once 'database.php' ;
+    require_once 'GlobalVariables.php';
+    session_start();
+    if( ! isset($_SESSION[$isLogged]) )
+    {
+        header(''); // Uzytkownika cofamy do strony glownej/logowania
+    }
     
 ?>
 
@@ -21,9 +29,21 @@
         <button class="header__button header__button--leftSide">Jak to działa?</button>
         <button class="header__button header__button--rightSide">Przeglądaj</button>
         <button class="header__button header__button--logo">ORGI</button>
+        <!-- Dodawnie plików tylko dla zalogowanych 
         <button class="header__button header__button--leftSide">Zaloguj się</button>
         <button class="header__button header__button--rightSide">Zarejestruj się</button>
-        <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
+        -->
+
+        <?php
+        if ( isset ( $_SESSION[$isLogged] ) )
+        {
+        ?>
+
+        <button class="header__button header__button--logout">Wyloguj się</button>
+
+        <?php
+        }
+        ?>
     </header>
     <div class="container">
         <input list="type" class="formtype">

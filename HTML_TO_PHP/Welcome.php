@@ -16,9 +16,33 @@
         <button class="header__button">Jak to działa?</button>
         <button class="header__button">Przeglądaj</button>
         <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
+        <?php
+            session_start();
+            require_once 'accounts.php' ;
+            //require_once 'database.php' ;
+            require_once 'GlobalVariables.php';
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
+        ?>
         <button class="header__button header__button--leftSide">Zaloguj się</button>
         <button class="header__button header__button--rightSide">Zarejestruj się</button>
-        <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
+        <?php 
+            }
+            else
+            {
+        ?>
+        <!-- 
+        Fajnie by było aby można było dodać obok przycisku 
+        np Witaj, xyz | wyloguj 
+        oczywisce na kazdej stronie gdzie i navbar. Chyba że użytkownik ma nie nieć
+        dostępu będąc zalogowany np strona logowania dla zalogowanego nie powinna
+        by dostępna
+        -->
+        <button class="header__button header__button--logout">Wyloguj się</button>
+        
+        <?
+            }
+        ?>
     </header>
     <div class="main">
         <section class="section__img">
