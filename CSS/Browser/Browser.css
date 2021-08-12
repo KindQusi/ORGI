@@ -1,0 +1,10 @@
+.main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.main__sidebar{
+    background-color: #711621;
+    height: 1000px;
+    width: 150px;
+}
