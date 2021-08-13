@@ -2,10 +2,13 @@ const foto = document.querySelector(".container__category--foto");
 const music = document.querySelector(".container__category--music");
 const text = document.querySelector(".container__category--text");
 const categories = document.querySelector(".container__categories");
+let lastMouseOverCategories;
 
 
 foto.addEventListener("mouseover", () => {
-    categories.innerHTML = `
+    if (lastMouseOverCategories !== 'foto') {
+        categories.classList.add("container__categories--active");
+        categories.innerHTML = `
     <div class="container__categories--foto">
     <ul class="categories__list">
         <li class="categories__list--item">
@@ -22,7 +25,13 @@ foto.addEventListener("mouseover", () => {
         </li>
     </ul>
 </div>`;
-    loadPs();
+        lastMouseOverCategories = 'foto';
+        loadPs();
+        console.log("mouseover, foto");
+    }
+    else{
+        console.log("mouseover, but again");
+    }
 });
 // foto.addEventListener("mouseout", () => {
 //     categories.innerHTML = ``;
@@ -30,7 +39,10 @@ foto.addEventListener("mouseover", () => {
 
 
 music.addEventListener("mouseover", () => {
-    categories.innerHTML = `
+    if (lastMouseOverCategories !== 'music') {
+        
+        categories.classList.add("container__categories--active");
+        categories.innerHTML = `
     <div class="container__categories--music">
         <ul class="categories__list">
             <li class="categories__list--item">
@@ -50,15 +62,25 @@ music.addEventListener("mouseover", () => {
             </li>
         </ul>
     </div>`;
-    loadPs();
+        lastMouseOverCategories = 'music';
+        loadPs();
+        console.log("mouseover, music");
+    }
+    
+    else{categories.style.background="transparent";
+        console.log("mouseover, but again");
+    }
 });
 // music.addEventListener("mouseout", () => {
-//     categories.innerHTML = ``;
+//     // categories.innerHTML = ``;
+//     categories.classList.remove("container__categories--active");
 // });
 
 
 text.addEventListener("mouseover", () => {
-    categories.innerHTML = `
+    if (lastMouseOverCategories !== 'text') {
+        categories.classList.add("container__categories--active");
+        categories.innerHTML = `
     <div class="container__categories--text">
         <ul class="categories__list">
             <li class="categories__list--item">
@@ -75,7 +97,13 @@ text.addEventListener("mouseover", () => {
             </li>
         </ul>
     </div>`;
-    loadPs();
+        lastMouseOverCategories = 'text';
+        loadPs();
+        console.log("mouseover, text");
+    }
+    else{
+        console.log("mouseover, but again");
+    }
 });
 
 // text.addEventListener("mouseout", () => {
