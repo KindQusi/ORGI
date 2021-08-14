@@ -111,10 +111,12 @@
             if (!$db->query($query))
                 throw new Exception("Brak połączenia z bazą. Proszę spóbować później");
 
+            
+            // Tutaj będziemy zapisywać nazwę oraz adres gdzie chcemy plik zapisać
+            $target_file == null;
+
             // 4.
             // Wyszukujemy naszego dodanego np zdjęcia
-
-            $target_file == null;
             $query = 
             "SELECT 
             `{$fileID_UploadsTable_Col}`
@@ -130,6 +132,7 @@
             // Sprawdzamy jego ID
             if ( $record->num_rows > 0 && $Record->now_rows < 2)
             {
+                // Powinien być tylko jeden wynik , tego co przed chwilą dodawaliśmy
                 while ($row = $record -> fetch_assoc() )
                 {
                     // Bierzemy ID      

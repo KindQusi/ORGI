@@ -1,7 +1,7 @@
 <?php
-    require_once 'accounts.php' ;
+    require_once '../PHP SCRIPTS/accounts.php' ;
     //require_once 'database.php' ;
-    require_once 'GlobalVariables.php';
+    require_once '../PHP SCRIPTS/GlobalVariables.php';
     session_start();
     if( ! isset($_SESSION[$isLogged]) )
     {

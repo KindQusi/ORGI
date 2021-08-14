@@ -1,7 +1,7 @@
 <?php
-    require_once 'accounts.php' ;
+    require_once '../PHP SCRIPTS/accounts.php' ;
     //require_once 'database.php' ;
-    require_once 'GlobalVariables.php';
+    require_once '../PHP SCRIPTS/GlobalVariables.php';
     session_start();
     if( isset($_SESSION[$isLogged]) )
     {
@@ -37,7 +37,7 @@
         -->
     </header>
     <div class="container">
-        <form class="container__Login" action="../PHP SCIPTS/RegistrationOrLogin.php" method="POST">
+        <form class="container__Login" action="../PHP SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" value="login" name="userAction">
             <p class="container__title">Logowanie</p>
             <input class="container__input" type="text" placeholder="Email">
@@ -48,7 +48,7 @@
             <p>ORGI</p>
             <p>Otwarte Repoxytorium Gigabajtów Inspiracji</p>
         </div>
-        <form class="container__Registration" action="../PHP SCIPTS/RegistrationOrLogin.php" method="POST">
+        <form class="container__Registration" action="../PHP SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" class="userAction" name="registration">
             <p class="container__title">Rejestracja</p>
             <input class="container__input" type="text" placeholder="Login">

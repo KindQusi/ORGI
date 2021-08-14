@@ -18,9 +18,9 @@
         <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
         <?php
             session_start();
-            require_once 'accounts.php' ;
+            require_once '../PHP SCRIPTS/accounts.php' ;
             //require_once 'database.php' ;
-            require_once 'GlobalVariables.php';
+            require_once '../PHP SCRIPTS/GlobalVariables.php';
             if ( !isset( $_SESSION[$isLogged] ) )
             {
         ?>
