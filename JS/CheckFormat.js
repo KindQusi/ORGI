@@ -1,21 +1,18 @@
 {
+
+
+    //główna część
     const newfile = document.querySelector(".addedfile");
     const addtagsbtn = document.querySelector(".addtagsbtn");
     const fileSize = ("", () => {
         var fileSize = document.getElementById('file').files[0].size;
         return fileSize;
     });
-    newfile.addEventListener("change", () => {
-        sizeConvert(fileSize());
-        formatCheck();
+    newfile.addEventListener("change", (e) => {
+        formatCheck(e);
     });
-    const AddNewTag = (newTag) => {
-        tagstable.push({
-            content: newTag,
-        })
-        Render();
-    };
-    //główna część
+
+
     let tagstable = [];
     addtagsbtn.addEventListener("click", () => {
         const newTag = document.querySelector(".addtags").value;
@@ -42,13 +39,27 @@
         });
 
     };
+    //dodawanie tagu
+    const AddNewTag = (newTag) => {
+        tagstable.push({
+            content: newTag,
+        })
+        Render();
+    };
+    // dodawanie zdjęcia
+    const addimg = (e) => {
+
+        // let addedimg=document.querySelector(".addedfile__img");
+        // //addedimg.style.backgroundImage=`url('${fullPath}')`
+        // addedimg.src=fullPath;
+        var image = document.querySelector('.addedfile__img');
+        image.src = URL.createObjectURL(e.target.files[0]);
+    }
 
 
 
 
-
-
-
+    //convertowanie rozmiaru pliku
     const sizeConvert = ("", (filesize) => {
         let i = 0;
         while (filesize / 1024 > 1) {
@@ -57,6 +68,7 @@
         }
         convertRasult(filesize, i);
     });
+    //wyświetlanie rozmiaru pliku
     const convertRasult = ("", (filesize, i) => {
         const size = document.querySelector(".size");
         filesize.toFixed(2)
@@ -83,13 +95,13 @@
                 break;
         }
     });
-    const formatCheck = ("", () => {
+    //pobieranie nazwy i rozszerzenia pliku
+    const formatCheck = ("", (e) => {
         var fullPath = document.querySelector(".addedfile").value;
         if (fullPath) {
             var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
             var filename = fullPath.substring(startIndex);
             let fullfilename = filename.substring(1);
-
             //szukanie wszystkich wystąpień "."
             let indices = [];
             let indicesLenght = 0;
@@ -108,13 +120,17 @@
             //     console.log(filename);
             //     console.log(fullfilename);
             // }
-            formatShow(roz);
-            fileNameShow(fullfilename);
-            checkform(roz);
+            if (checkform(roz)) {
+                // formatShow(roz);
+                // fileNameShow(fullfilename);
+                // sizeConvert(fileSize());
+                addimg(e);
+            }
         }
     });
+    //sprawdzanie poprawności rozszerzenia pliku
     const checkform = ("", (roz) => {
-        const setform = document.querySelector(".formtype");
+        let setform = document.querySelector(".formtype");
         let imageform = [
             { form: ".jpg" },
             { form: ".png" },
@@ -128,13 +144,14 @@
         let i = 0;
         while (i < 2) {
             if (setform.value === "Zdjęcia") {
-                if (roz === imageform[i].form) {
-                    return alert("Plik poprawny");
+                if (roz.toLowerCase() === imageform[i].form) {
+                    return alert("Plik poprawny"), true;
+
                 }
                 i++;
             }
             else if (setform.value === "Filmy") {
-                if (roz === movieform[i].form) {
+                if (roz.toLowerCase() === movieform[i].form) {
                     return alert("Plik poprawny");
                 }
                 i++;
@@ -144,14 +161,16 @@
             }
         }
         if (i === 2) {
-            alert("Zły plik!");
+            return alert("Zły plik!");
         }
     });
+    //wyświetlenie rozszerzenia pliku
     const formatShow = ("", (fileformat) => {
         const format = document.querySelector(".format");
         format.innerHTML = `Rozszerzenie pliku: ${fileformat}`;
         //console.log(filename);
     });
+    //wyświetlenie pełnej nazwy pliku
     const fileNameShow = ("", (filename) => {
         const FileName = document.querySelector(".filename");
         FileName.innerHTML = `Nazwa pliku: ${filename}`;
