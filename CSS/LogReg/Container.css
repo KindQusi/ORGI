@@ -4,6 +4,7 @@
     justify-self: center;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 20% 10%;
+    margin-bottom: 10px;
     padding: 5px;
     align-items: center;
 }
@@ -90,4 +91,17 @@
 .container__button:active {
     background-color: hsl(213, 16%, 44%);
     color: white;
+}
+.alert{ 
+    width: 500px;
+    margin: 0px auto;
+}
+.alert__error{
+   
+    width: 500px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+    padding: 5px;
 }
