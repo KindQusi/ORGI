@@ -53,6 +53,8 @@ class Database
         */
         // Próba połączenia
         // Dane z credits.php
+        global $Host, $db_user, $db_password, $db_name;
+        
 		$this->connection = new mysqli($Host, $db_user, $db_password, $db_name);
         
         //Sprawdzamy czy się udało
