@@ -8,6 +8,9 @@
             3A. Gdy mamy to w przypadku logowania gdy zgadza się i hasło to logujemy
             3B. Gdy nie mamy to w przypadku rejestracji dodajemy użytkownika i prosimy o zalogowanie w oparciu o te nowe dane 
     */
+    require_once 'GlobalVariables.php';
+    
+    //global $isLogged,$userCredits;
 
     if(!isset($_SESSION[$isLogged]) && isset($_POST[$userCredits]))
     {
@@ -22,7 +25,6 @@
             {
                 require_once 'accounts.php' ;
                 require_once 'database.php' ;
-                require_once 'GlobalVariables.php';
 
                 // Tworzymy nową bazę oraz od razu ją łączymy
                 $db_Base = new Database();
@@ -62,7 +64,7 @@
                             //serialize($user);
                             $_SESSION[$userCredits] = $user;
 
-                            header('Location: Home.php');
+                            header('Location: ../PHP_TO_HTML/Welcome.php'); 
                         }
                         else
                         {
@@ -92,7 +94,6 @@
             try
             {
                 require_once 'database.php' ;
-                require_once 'GlobalVariables.php';
 
                 // Tworzymy nową bazę oraz od razu ją łączymy
                 $db_Base = new Database();
@@ -126,7 +127,7 @@
                         // Udało się dodać użytkownika do bazy
                         $_SESSION[$error_RegisForm] = "Udana rejestracja teraz proszę się zaloguj";
                         echo "Udana rejestracja teraz proszę się zaloguj";
-                        //header('Location: loginform.php');
+                        //header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
                     }
                     else
                     {
@@ -148,7 +149,7 @@
                 // wiadomość w $e
                 echo $e;
                 $_SESSION[$error_RegisForm] = $e;
-                //header('Location: registerform.php');
+                //header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
             }
         }
         /*
@@ -158,7 +159,7 @@
         else
         {
             $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";
-            header('Location: loginform.php'); 
+            header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
         }
     }
 ?>
