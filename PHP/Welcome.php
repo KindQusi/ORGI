@@ -31,6 +31,8 @@
             else
             {
         ?>
+        <!-- paragraf z inputem na  przywitanie użytkownika -->
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" value="Maciek" disabled></p>
         <!-- 
         Fajnie by było aby można było dodać obok przycisku 
         np Witaj, xyz | wyloguj 

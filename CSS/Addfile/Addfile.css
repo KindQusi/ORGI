@@ -1,4 +1,4 @@
-.container {
+.container__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 700px;
@@ -117,12 +117,6 @@
 .uploadbtn:active {
     background-color: hsl(213, 16%, 44%);
     color: white;
-}
-.form{
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    height: 100%;
 }
 .file__description{
     background-color: rgb(224, 220, 220);

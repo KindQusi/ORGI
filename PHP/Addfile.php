@@ -45,25 +45,27 @@
         }
         ?>
     </header>
-    <div class="container">
-        <input list="type" class="formtype">
+        <form class="container__form" action="addingFiles.php" method="POST">
+        <div class="addedfile__div">
+            <label class="addedfile__label" for="">Wybierz typ pliku: </label>
+            <input list="type" class="formtype"> 
+        </div>
+        <img class="addedfile__img" src="" alt="">
         <datalist id="type">
             <option value="">
             <option value="Zdjęcia">
             <option value="Filmy">
         </datalist>
-        <form class="form" action="../PHP SCIPTS/addingFiles.php" method="POST">
             <input class="addedfile" type="file" id="file">
-            <p class="filename"></p>
+            <!-- <p class="filename"></p>
             <p class="format"></p>
-            <p class="size"></p>
+            <p class="size"></p> -->
             <input type="text" class="addtags" placeholder="Add Tag">
             <input type="button" class="addtagsbtn" value="dodaj tag">
             <p class="tagslist"></p>
             <textarea class="file__description" placeholder="">Opis tu jebnij</textarea>
             <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
         </form>
-    </div>
     <script src="/JS/CheckFormat.js"></script>
 </body>
 

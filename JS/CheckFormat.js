@@ -152,13 +152,13 @@
             if (setform.value === "Zdjęcia") {
                 if (roz.toLowerCase() === imageform[i].form) {
                     addimg(e);
-                    return  true;//alert("Plik poprawny"),
+                    return true;//alert("Plik poprawny"),
                 }
             }
             else if (setform.value === "Filmy") {
                 if (roz.toLowerCase() === movieform[i].form) {
                     addimg();
-                    return alert("Plik poprawny");
+                    return true;//alert("Plik poprawny")
                 }
             }
             else {

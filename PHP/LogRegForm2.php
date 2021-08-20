@@ -46,7 +46,7 @@
         </form>
         <div class="container__CenterLogo">
             <p>ORGI</p>
-            <p>Otwarte Repoxytorium Gigabajtów Inspiracji</p>
+            <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
         </div>
         <form class="container__Registration" action="../PHP SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" class="userAction" name="registration">

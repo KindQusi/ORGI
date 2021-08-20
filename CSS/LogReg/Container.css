@@ -35,7 +35,6 @@
     height: 20px;
     margin: 2px;
     padding: 5px;
-    transition: 2s;
 }
 
 .container__input:focus-visible {
@@ -80,7 +79,7 @@
     padding: 5px;
     border: none;
     border-radius: 20px;
-    transition: background 2s, color 2s;
+    transition: background 0.5s, color 0.5s;
 }
 
 .container__button:hover {

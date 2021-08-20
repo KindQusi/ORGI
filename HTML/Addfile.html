@@ -21,27 +21,27 @@
         <button class="header__button header__button--rightSide">Zarejestruj się</button>
         <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
     </header>
-    <div class="container">
-        <!-- <form class="form" action="addingFiles.php" method="POST"> -->
-        <div class="addedfile__div"><label class="addedfile__label" for="">Wybierz typ pliku: </label><input list="type" class="formtype"> </div><img class="addedfile__img" src="" alt="">
+    <form class="container__form" action="addingFiles.php" method="POST">
+        <div class="addedfile__div">
+            <label class="addedfile__label" for="">Wybierz typ pliku: </label>
+            <input list="type" class="formtype">
+        </div>
+        <img class="addedfile__img" src="" alt="">
         <datalist id="type">
             <option value="">
             <option value="Zdjęcia">
             <option value="Filmy">
         </datalist>
-            <input class="addedfile" type="file" id="file">
-            <!-- <p class="filename"></p>
+        <input class="addedfile" type="file" id="file">
+        <!-- <p class="filename"></p>
             <p class="format"></p>
             <p class="size"></p> -->
-            <input type="text" class="addtags" placeholder="Add Tag">
-            <input type="button" class="addtagsbtn" value="dodaj tag">
-            <p class="tagslist"></p>
-            <textarea class="file__description" placeholder="">Opis tu jebnij</textarea>
-            <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
-        <!-- </form> -->
-        
-    </div>
-
+        <input type="text" class="addtags" placeholder="Add Tag">
+        <input type="button" class="addtagsbtn" value="dodaj tag">
+        <p class="tagslist"></p>
+        <textarea class="file__description" placeholder="">Opis tu jebnij</textarea>
+        <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
+    </form>
     <script src="/JS/CheckFormat.js"></script>
 </body>
 
