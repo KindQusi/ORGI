@@ -53,7 +53,13 @@
         // //addedimg.style.backgroundImage=`url('${fullPath}')`
         // addedimg.src=fullPath;
         var image = document.querySelector('.addedfile__img');
-        image.src = URL.createObjectURL(e.target.files[0]);
+        if (e === undefined) {
+            image.src = `../Photos/videoimg.png`;
+        }
+        else {
+            image.src = URL.createObjectURL(e.target.files[0]);
+        }
+
     }
 
 
@@ -120,16 +126,16 @@
             //     console.log(filename);
             //     console.log(fullfilename);
             // }
-            if (checkform(roz)) {
+            if (checkform(roz, e)) {
                 // formatShow(roz);
                 // fileNameShow(fullfilename);
                 // sizeConvert(fileSize());
-                addimg(e);
+
             }
         }
     });
     //sprawdzanie poprawności rozszerzenia pliku
-    const checkform = ("", (roz) => {
+    const checkform = ("", (roz, e) => {
         let setform = document.querySelector(".formtype");
         let imageform = [
             { form: ".jpg" },
@@ -145,20 +151,20 @@
         while (i < 2) {
             if (setform.value === "Zdjęcia") {
                 if (roz.toLowerCase() === imageform[i].form) {
-                    return alert("Plik poprawny"), true;
-
+                    addimg(e);
+                    return  true;//alert("Plik poprawny"),
                 }
-                i++;
             }
             else if (setform.value === "Filmy") {
                 if (roz.toLowerCase() === movieform[i].form) {
+                    addimg();
                     return alert("Plik poprawny");
                 }
-                i++;
             }
             else {
                 return alert("Złe rozszerzenie!");
             }
+            i++;
         }
         if (i === 2) {
             return alert("Zły plik!");
