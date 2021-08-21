@@ -131,7 +131,7 @@
         </footer>
     </div>
 
-
+    <script src="../JS/WelcomeAnimation.js"></script>
 </body>
 
 </html>
