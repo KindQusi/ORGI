@@ -40,8 +40,8 @@
         <form class="container__Login" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" value="login" name="userAction">
             <p class="container__title">Logowanie</p>
-            <input class="container__input" type="text" placeholder="Email">
-            <input class="container__input" type="text" placeholder="Password">
+            <input name="email" class="container__input" type="text" placeholder="Email">
+            <input name="password" class="container__input" type="text" placeholder="Password">
             <button class="container__button">Logowanie</button>
         </form>
         <div class="container__CenterLogo">
@@ -49,11 +49,11 @@
             <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
         </div>
         <form class="container__Registration" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
-            <input type="hidden" class="userAction" name="registration">
+            <input type="hidden" class="userAction" name="registration" name="userAction" value="registration">
             <p class="container__title">Rejestracja</p>
-            <input class="container__input" type="text" placeholder="Login">
-            <input class="container__input" type="text" placeholder="Email">
-            <input class="container__input" type="text" placeholder="Password">
+            <input class="container__input" name="login" type="text" placeholder="Login">
+            <input class="container__input" name="email" type="text" placeholder="Email">
+            <input class="container__input" name="password" type="text" placeholder="Password">
             <input class="container__input" type="text" placeholder="RepeatedPassword">
             <button class="container__button">Rejestracja</button>
         </form>
