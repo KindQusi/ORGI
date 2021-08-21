@@ -9,6 +9,9 @@
     ///////////////////////////
 
     $userAction      = 'userAction';
+    $userActionLogIn = 'login';
+    $userActionRegIn = 'registration';
+
     $isLogged        = 'isLogged';
 
     $email_LogInForm = 'email';

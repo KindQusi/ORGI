@@ -11,14 +11,14 @@
     require_once 'GlobalVariables.php';
     
 
-    if(!isset($_SESSION[$isLogged]) && isset($_POST[$userCredits]))
+    if(!isset($_SESSION[$isLogged]) && isset($_POST[$userAction]))
     {
         /*
             
             Jak użytkownik będzie chciał się zalogować
             
         */
-        if ($_POST[$userAction] == 'logIn') 
+        if ($_POST[$userAction] == $userActionLogIn) 
         {
             try
             {
@@ -87,7 +87,7 @@
             Jak użytkownik będzie chciał się zarejestrować
 
         */
-        else if ( $_POST[$userAction] == 'register' )
+        else if ( $_POST[$userAction] == $userActionRegIn )
         {
             
             try
@@ -158,7 +158,14 @@
         else
         {
             $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";
-            header('Location: ../PHP/LogRegForm2.php'); 
+            echo 'zzz';
+            //header('Location:../PHP/LogRegForm2.php'); 
         }
+    }
+    else
+    {
+        $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";
+        //echo 'zzz';
+        header('Location:../PHP/LogRegForm2.php'); 
     }
 ?>
