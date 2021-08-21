@@ -37,7 +37,7 @@
         -->
     </header>
     <div class="container">
-        <form class="container__Login" action="../PHP SCRIPTS/RegistrationOrLogin.php" method="POST">
+        <form class="container__Login" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" value="login" name="userAction">
             <p class="container__title">Logowanie</p>
             <input class="container__input" type="text" placeholder="Email">
@@ -48,7 +48,7 @@
             <p>ORGI</p>
             <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
         </div>
-        <form class="container__Registration" action="../PHP SCRIPTS/RegistrationOrLogin.php" method="POST">
+        <form class="container__Registration" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" class="userAction" name="registration">
             <p class="container__title">Rejestracja</p>
             <input class="container__input" type="text" placeholder="Login">
@@ -59,9 +59,22 @@
         </form>
     </div>
     <!-- Div z paragrafem na Errory -->
+    <?php
+        if ( isset( $_SESSION[$error_LogInForm]) || isset( $_SESSION[$error_RegisForm]) )
+        {
+    ?>
     <div class="alert">
-        <p class="alert__error">Error</p>
+        <p class="alert__error"> 
+            <?php 
+                echo $_SESSION[$error_LogInForm].''.$_SESSION[$error_RegisForm];
+                unset($_SESSION[$error_LogInForm]);
+                unset($_SESSION[$error_RegisForm]);
+            ?> 
+        </p>
     </div>
+    <?php
+        }
+    ?>
 </body>
 
 </html>

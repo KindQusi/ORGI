@@ -29,10 +29,6 @@
         <button class="header__button header__button--leftSide">Jak to działa?</button>
         <button class="header__button header__button--rightSide">Przeglądaj</button>
         <button class="header__button header__button--logo">ORGI</button>
-        <!-- Dodawnie plików tylko dla zalogowanych 
-        <button class="header__button header__button--leftSide">Zaloguj się</button>
-        <button class="header__button header__button--rightSide">Zarejestruj się</button>
-        -->
 
         <?php
         if ( isset ( $_SESSION[$isLogged] ) )

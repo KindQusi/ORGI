@@ -10,7 +10,6 @@
     */
     require_once 'GlobalVariables.php';
     
-    //global $isLogged,$userCredits;
 
     if(!isset($_SESSION[$isLogged]) && isset($_POST[$userCredits]))
     {
@@ -64,7 +63,7 @@
                             //serialize($user);
                             $_SESSION[$userCredits] = $user;
 
-                            header('Location: ../PHP_TO_HTML/Welcome.php'); 
+                            header('Location: ../PHP/Welcome.php'); 
                         }
                         else
                         {
@@ -80,7 +79,7 @@
                 // wiadomość w $e
                 $_SESSION[$error_LogInForm] = $e;
                 echo $e;
-                //header('Location: loginform.php');
+                header('Location: ../PHP/Welcome.php');
             }
         }
         /*
@@ -127,7 +126,7 @@
                         // Udało się dodać użytkownika do bazy
                         $_SESSION[$error_RegisForm] = "Udana rejestracja teraz proszę się zaloguj";
                         echo "Udana rejestracja teraz proszę się zaloguj";
-                        //header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
+                        header('Location: ../PHP/LogRegForm2.php'); 
                     }
                     else
                     {
@@ -149,7 +148,7 @@
                 // wiadomość w $e
                 echo $e;
                 $_SESSION[$error_RegisForm] = $e;
-                //header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
+                header('Location: ../PHP/LogRegForm2.php'); 
             }
         }
         /*
@@ -159,7 +158,7 @@
         else
         {
             $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";
-            header('Location: ../PHP_TO_HTML/LogRegForm2.php'); 
+            header('Location: ../PHP/LogRegForm2.php'); 
         }
     }
 ?>

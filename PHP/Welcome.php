@@ -42,7 +42,7 @@
         -->
         <button class="header__button header__button--logout">Wyloguj się</button>
         
-        <?
+        <?php
             }
         ?>
     </header>
