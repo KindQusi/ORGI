@@ -49,7 +49,7 @@
             <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
         </div>
         <form class="container__Registration" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
-            <input type="hidden" class="userAction" name="registration" name="userAction" value="registration">
+            <input type="hidden" class="userAction" name="userAction" value="registration">
             <p class="container__title">Rejestracja</p>
             <input class="container__input" name="login" type="text" placeholder="Login">
             <input class="container__input" name="email" type="text" placeholder="Email">
@@ -75,6 +75,7 @@
     <?php
         }
     ?>
+    
 </body>
 
 </html>

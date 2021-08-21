@@ -31,19 +31,21 @@
             <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
         </div>
         <form class="container__Registration" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
-            <input type="hidden" class="userAction" name="registration" name="userAction">
+            <input type="hidden" class="userAction" name="userAction" value="registration">
             <p class="container__title">Rejestracja</p>
             <input class="container__input" name="login" type="text" placeholder="Login">
             <input class="container__input" name="email" type="text" placeholder="Email">
-            <input class="container__input" name="password" type="text" placeholder="Password">
-            <input class="container__input" type="text" placeholder="RepeatedPassword">
+            <input class="container__input password" name="password" type="text" placeholder="Password">
+            <input class="container__input repeatedpassword" type="text" placeholder="RepeatedPassword">
             <button class="container__button">Rejestracja</button>
         </form>
     </div>
+    
     <!-- Div z paragrafem na Errory -->
     <div class="alert">
         <p class="alert__error">Error</p>
     </div>
+    <script src="../JS/VerifyPassword.js"></script>
 </body>
 
 </html>
