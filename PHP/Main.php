@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="../CSS/Header.css">
 </head>
 <body class="body">
-    <header class="header">
+<header class="header">
         <button class="header__button">Jak to działa?</button>
-        <button class="header__button">Przeglądaj</button>
-        <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
+        <a href="../HTML/Categories.html"><button class="header__button">Przeglądaj</button></a>
+        <a href="../HTML/Welcome.html"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
         <button class="header__button header__button--leftSide">Zaloguj się</button>
         <button class="header__button header__button--rightSide">Zarejestruj się</button>
         <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->

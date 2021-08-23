@@ -27,8 +27,8 @@
     <header class="header">
 
         <button class="header__button header__button--leftSide">Jak to działa?</button>
-        <button class="header__button header__button--rightSide">Przeglądaj</button>
-        <button class="header__button header__button--logo">ORGI</button>
+        <a href="../HTML/Categories.html"><button class="header__button">Przeglądaj</button></a>
+        <a href="../HTML/Welcome.html"><button class="header__button header__button--logo">ORGI</button></a>
 
         <?php
         if ( isset ( $_SESSION[$isLogged] ) )

@@ -12,7 +12,7 @@ foto.addEventListener("mouseover", () => {
     <div class="container__categories--foto">
     <ul class="categories__list">
         <li class="categories__list--item">
-        <a class="p">Zdjęcia</a>
+        <a href="../HTML/Browser.html" class="p">Zdjęcia</a>
         </li>
         <li class="categories__list--item">
             Tag2
@@ -46,19 +46,19 @@ music.addEventListener("mouseover", () => {
     <div class="container__categories--music">
         <ul class="categories__list">
             <li class="categories__list--item">
-                <a class="p">Muzyka</a>
+                <a href="../HTML/Browser.html" class="p">Muzyka</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Podkłady</a>
+                <a href="../HTML/Browser.html" class="p">Podkłady</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Efekty(sample)</a>
+                <a href="../HTML/Browser.html" class="p">Efekty(sample)</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Słuchowiska + YT</a>
+                <a href="../HTML/Browser.html" class="p">Słuchowiska + YT</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Reportaże + YT</a>
+                <a href="../HTML/Browser.html" class="p">Reportaże + YT</a>
             </li>
         </ul>
     </div>`;
@@ -84,16 +84,16 @@ text.addEventListener("mouseover", () => {
     <div class="container__categories--text">
         <ul class="categories__list">
             <li class="categories__list--item">
-                <a class="p">Text</a>
+                <a href="Browser.html" class="p">Text</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Felietony</a>
+                <a href="../HTML/Browser.html" class="p">Felietony</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Opowiadania</a>
+                <a href="../HTML/Browser.html" class="p">Opowiadania</a>
             </li>
             <li class="categories__list--item">
-                <a class="p">Poezja</a>
+                <a href="../HTML/Browser.html" class="p">Poezja</a>
             </li>
         </ul>
     </div>`;

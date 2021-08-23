@@ -22,8 +22,8 @@
 <body class="body">
     <header class="header">
         <button class="header__button">Jak to działa?</button>
-        <button class="header__button">Przeglądaj</button>
-        <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
+        <a href="../HTML/Categories.html"><button class="header__button">Przeglądaj</button></a>
+        <a href="../HTML/Welcome.html"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
 
         <?php           
             if ( !isset( $_SESSION[$isLogged] ) )
@@ -51,7 +51,7 @@
         </section>
         <section class="section__obout">
             <ul class="section__obout--list">
-                <li class="section__obout--listitem">
+                <li class="section__obout--listitem fade-in">
                     <div class="section__obout--div">
                         <p class="section__obout--text">Razem Tworzymy Lorem, ipsum dolor sit amet consectetur
                             adipisicing elit. Blanditiis optio, omnis commodi animi aliquam quae quia laborum doloremque
@@ -59,7 +59,7 @@
                         <img class="section__obout--icon" src="../Photos/orgilogo_biae.png" alt="">
                     </div>
                 </li>
-                <li class="section__obout--listitem">
+                <li class="section__obout--listitem fade-in">
                     <div class="section__obout--div"><img class="section__obout--icon" src="../Photos/orgilogo_biae.png"
                             alt="">
                         <p class="section__obout--text section__obout--reversetext">Lorem ipsum dolor sit amet
@@ -68,7 +68,7 @@
                             unde debitis.</p>
                     </div>
                 </li>
-                <li class="section__obout--listitem">
+                <li class="section__obout--listitem fade-in">
                     <div class="section__obout--div">
                         <p class="section__obout--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
                             neque harum necessitatibus nemo veniam reprehenderit ipsam asperiores nesciunt facere.
@@ -86,7 +86,7 @@
                         <p class="gallery__text">Rządzący Razem Tworzymy Lorem, ipsum dolor sit amet consectetur
                             adipisicing elit. Blanditiis optio, omnis commodi animi aliquam quae quia laborum doloremque
                             aperiam itaque incidunt quas exercitationem porro dolores explicabo iste iure et magnam.</p>
-                        <img class="gallery__image" src="../img/Ruler.jpg" alt="">
+                        <img class="gallery__image" src="../Photos/Ruler.jpg" alt="">
                     </div>
                 </li>
                 <li class="gallery--listitem">
