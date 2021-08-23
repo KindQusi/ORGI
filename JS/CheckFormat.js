@@ -12,18 +12,26 @@
 
 
     let tagstable = [];
+    const maxtags = 6;
+    let currenttags = 0;
+
     addtagsbtn.addEventListener("click", () => {
-        const newTag = document.querySelector(".addtags").value;
-        if (newTag === "") {
-            document.querySelector(".addtags").focus();
-            return;
+        if (currenttags < maxtags && currenttags >= 0) {
+            const newTag = document.querySelector(".addtags").value;
+            if (newTag === "") {
+                document.querySelector(".addtags").focus();
+                return;
+            }
+            AddNewTag(newTag);
+            currenttags++;
+            document.querySelector(".addtags").value = null;
         }
-        AddNewTag(newTag);
-        document.querySelector(".addtags").value = null;
     });
+
+
     const Render = () => {
         let htmlString = "";
-        let i=0;
+        let i = 0;
         for (const tag of tagstable) {
             htmlString += `<li class="tagitem"><input name="tag${i}" class="tag" value="${tag.content}"}><button class="js-remove">x</button></li>`;
             i++
@@ -34,6 +42,7 @@
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 tagstable.splice(index, 1);
+                currenttags--;
                 Render();
             })
         });
