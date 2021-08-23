@@ -3,7 +3,7 @@
 class Account
 {
     // Podstawowe dane
-    public $nick;
+    private $nick;
     private $email;
     private $id;
 
@@ -17,6 +17,9 @@ class Account
 
     public function GetUserId()
     {   return $this->id;   }
+
+    public function GetUserNick()
+    {   return $this->nick;   }
     
 }
 ?>

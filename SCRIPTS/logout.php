@@ -1,4 +1,5 @@
 <?php
-    session_destroy();
-    header('');
+    session_start();
+    session_unset();
+    header('Location: ../PHP/Welcome.php'); 
 ?>

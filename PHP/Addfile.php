@@ -5,7 +5,7 @@
     session_start();
     if( ! isset($_SESSION[$isLogged]) )
     {
-        header(''); // Uzytkownika cofamy do strony glownej/logowania
+        header('Location: ../PHP/LogRegForm2.php'); ; // Uzytkownika cofamy do strony logowania
     }
     
 ?>

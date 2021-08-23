@@ -14,10 +14,10 @@
         Nazwy plików -> tylko identyfikacyjnie
 
     */
-    session_start();
     require_once 'accounts.php' ;
     require_once 'database.php' ;
     require_once 'GlobalVariables.php';
+    session_start();
     /*
         Dostaniemy się tu gdy użytkownik jest zalogowany oraz wypełnił formularz
     */
@@ -57,7 +57,7 @@
             // O dodającym
             $user = $_SESSION[$userCredits];
             //unserialize($user);
-            $userID = $user.GetUserId();
+            $userID = $user->GetUserId();
 
             $fileName = $_FILES[$file_AddFileForm]["name"];
             $query = 

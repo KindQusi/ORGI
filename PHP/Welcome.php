@@ -1,3 +1,11 @@
+<?php
+    require_once '../SCRIPTS/accounts.php' ;
+    require_once '../SCRIPTS/GlobalVariables.php';
+    session_start();
+    //require_once 'database.php' ;
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -16,11 +24,8 @@
         <button class="header__button">Jak to działa?</button>
         <button class="header__button">Przeglądaj</button>
         <img class="header__logo" src="../Photos/orgilogo_biae.png" alt="">
-        <?php
-            session_start();
-            require_once '../SCRIPTS/accounts.php' ;
-            //require_once 'database.php' ;
-            require_once '../SCRIPTS/GlobalVariables.php';
+
+        <?php           
             if ( !isset( $_SESSION[$isLogged] ) )
             {
         ?>
@@ -32,19 +37,13 @@
             {
         ?>
         <!-- paragraf z inputem na  przywitanie użytkownika -->
-        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" value="Maciek" disabled></p>
-        <!-- 
-        Fajnie by było aby można było dodać obok przycisku 
-        np Witaj, xyz | wyloguj 
-        oczywisce na kazdej stronie gdzie i navbar. Chyba że użytkownik ma nie nieć
-        dostępu będąc zalogowany np strona logowania dla zalogowanego nie powinna
-        by dostępna
-        -->
-        <button class="header__button header__button--logout">Wyloguj się</button>
-        
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled
+        value="<?php echo $_SESSION[$userCredits]->GetUserNick(); ?>" ></p>
+        <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj się</button>
         <?php
             }
         ?>
+
     </header>
     <div class="main">
         <section class="section__img">
