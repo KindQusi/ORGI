@@ -32,15 +32,15 @@
     // 6 tagów obowiązkowych
     // 
 
-    $file_AddFileForm       = '';
-    $typeFile_AddFileForm   = '';
-    $fileDescr_AddFileForm  ='';
-    $fileTag_AddFileForm    ='';
-    $fileTag1_AddFileForm   ='';
-    $fileTag2_AddFileForm   ='';
-    $fileTag3_AddFileForm   ='';
-    $fileTag4_AddFileForm   ='';
-    $fileTag5_AddFileForm   ='';
+    $file_AddFileForm       = 'file';
+    $typeFile_AddFileForm   = 'filetype';
+    $fileDescr_AddFileForm  ='description';
+    $fileTag_AddFileForm    ='tag0';
+    $fileTag1_AddFileForm   ='tag1';
+    $fileTag2_AddFileForm   ='tag2';
+    $fileTag3_AddFileForm   ='tag3';
+    $fileTag4_AddFileForm   ='tag4';
+    $fileTag5_AddFileForm   ='tag5';
 
     $error_AddFileForm = '';
 
