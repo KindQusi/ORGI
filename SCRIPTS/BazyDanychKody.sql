@@ -32,11 +32,12 @@ PRIMARY KEY (ID)
 
 -- Może dodać ile razy pobrane?
 -- Zdjęcia maxymalna ilość tagów
-CREATE TABLE {Zdjecia/Sluchowiska itp} (
+{Zdjecia/Sluchowiska itp}
+CREATE TABLE Zdjecia (
 ID          int          NOT NULL AUTO_INCREMENT,
 ID_USER     int          NOT NULL, -- Osoba dodajaca
 NazwaPliku  VARCHAR(30)  NOT NULL,
-Opis        VARCHAR(256) NOT NULL, -- longtxt?
+Opis        TEXT         NOT NULL, -- longtxt?
 Tag         VARCHAR(40)  NOT NULL,
 Tag1        VARCHAR(40) ,
 Tag2        VARCHAR(40) ,

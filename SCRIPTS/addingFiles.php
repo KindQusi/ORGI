@@ -21,7 +21,7 @@
     /*
         Dostaniemy się tu gdy użytkownik jest zalogowany oraz wypełnił formularz
     */
-    if( isset( $_SESSION[$isLogged] ) && isset( $_POST[$typeFileAddFileForm]) )
+    if( isset( $_SESSION[$isLogged] ) && isset( $_POST[$typeFile_AddFileForm]) )
     {
         try
         {   
@@ -33,8 +33,8 @@
             // TODO
             // Sprawdzamy co użytkownik dodaje i czy 
             // jest to odpowiednia rzecz
-            switch ($_POST[$typeFileAddFileForm]) {
-                case 'Zdjecie':
+            switch ($_POST[$typeFile_AddFileForm]) {
+                case $photoType_AddFileForm:
                     $target_dir   = $photosUploadFolder;
                     $target_table = $photosUploadTable;
                     break;
@@ -59,7 +59,7 @@
             //unserialize($user);
             $userID = $user->GetUserId();
 
-            $fileName = $_FILES[$file_AddFileForm]["name"];
+            $fileName = $_FILES[$file_AddFileForm]['name'];
             $query = 
             "SELECT 
             `{$fileID_UploadsTable_Col}`
@@ -71,9 +71,11 @@
             `{$userID_UploadsTable_Col}` = '{$userID}'
             ";
 
+            $resualt = $db->query($query);
+
             // 2.
             // Sprawdzamy czy mamy coś już takiego      
-            if ( $db->query($query) )
+            if ( $resualt->num_rows != 0 )
                 throw new Exception("Mamy juz taki plik");
 
             // 3.
@@ -83,20 +85,51 @@
 
             // O pliku
             // $fileName   = $_FILES[$file_AddFileForm]["name"];
-            $fileDesc   = $_POST[$fileDescr_AddFileForm];
+            if ( isset( $_POST[$fileDescr_AddFileForm] ) )
+                $fileDesc = $_POST[$fileDescr_AddFileForm];
+            else
+                $fileDesc = 'Brak opisu';
+            
+            if ( isset( $_POST[$fileTag_AddFileForm] ) )
+                $fileTag = $_POST[$fileTag_AddFileForm];
+            else
+                $fileTag = 'Brak tagu';
+
+            if ( isset( $_POST[$fileTag1_AddFileForm] ) )
+                $fileTag1 = $_POST[$fileTag1_AddFileForm];
+            else
+                $fileTag1 = 'Brak tagu1';
+            if ( isset( $_POST[$fileTag2_AddFileForm] ) )
+                $fileTag2 = $_POST[$fileTag2_AddFileForm];
+            else
+                $fileTag2 = 'Brak tagu2';
+            if ( isset( $_POST[$fileTag3_AddFileForm] ) )
+                $fileTag3 = $_POST[$fileTag3_AddFileForm];
+            else
+                $fileTag3 = 'Brak tagu3';
+            if ( isset( $_POST[$fileTag4_AddFileForm] ) )
+                $fileTag4 = $_POST[$fileTag4_AddFileForm];
+            else
+                $fileTag4 = 'Brak tagu4';
+            if ( isset( $_POST[$fileTag5_AddFileForm] ) )
+                $fileTag5 = $_POST[$fileTag5_AddFileForm];
+            else
+                $fileTag5 = 'Brak tagu5';
+            /*
+            $fileDesc = $_POST[$fileDescr_AddFileForm];
             $fileTag    = $_POST[$fileTag_AddFileForm];
             $fileTag1   = $_POST[$fileTag1_AddFileForm];
             $fileTag2   = $_POST[$fileTag2_AddFileForm];
             $fileTag3   = $_POST[$fileTag3_AddFileForm];
             $fileTag4   = $_POST[$fileTag4_AddFileForm];
             $fileTag5   = $_POST[$fileTag5_AddFileForm];
-
+            */
             // Zapytanie wstawiania pliku
             $query = 
             "INSERT INTO 
             `{$target_table}`
             (
-            `{$user_IDUploadsTable_Col}`,`{$fileName_UploadsTable_Col}`,`{$descr_UploadsTable_Col}`,
+            `{$userID_UploadsTable_Col}`,`{$fileName_UploadsTable_Col}`,`{$descr_UploadsTable_Col}`,
             `{$Tag_UploadsTable_Col}`,`{$Tag1_UploadsTable_Col }`,`{$Tag2_UploadsTable_Col }`,
             `{$Tag3_UploadsTable_Col }`,`{$Tag4_UploadsTable_Col }`,`{$Tag5_UploadsTable_Col }`
             )           
@@ -106,14 +139,14 @@
             '{$fileTag}','{$fileTag1}','{$fileTag2}',
             '{$fileTag3}','{$fileTag4}','{$fileTag5}'
             )"; 
-            
+
             // Jeżeli nie uda się go dodać do bazy
             if (!$db->query($query))
                 throw new Exception("Brak połączenia z bazą. Proszę spóbować później");
 
             
             // Tutaj będziemy zapisywać nazwę oraz adres gdzie chcemy plik zapisać
-            $target_file == null;
+            $target_file = null;
 
             // 4.
             // Wyszukujemy naszego dodanego np zdjęcia
@@ -130,7 +163,7 @@
             // Prosimy o wynik
             $record = $db->query($query);
             // Sprawdzamy jego ID
-            if ( $record->num_rows > 0 && $Record->now_rows < 2)
+            if ( $record->num_rows == 1)
             {
                 // Powinien być tylko jeden wynik , tego co przed chwilą dodawaliśmy
                 while ($row = $record -> fetch_assoc() )
@@ -171,6 +204,7 @@
         catch(Exception $e)
         {
             $_SESSION[$error_AddFileForm] = $e;
+            echo $e;
             // + przekierowanie
             //header('Location: Home.php');
         }

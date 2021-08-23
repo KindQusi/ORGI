@@ -43,7 +43,7 @@
         }
         ?>
     </header>
-        <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST">
+        <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST" enctype="multipart/form-data">
         <div class="addedfile__div">
             <label class="addedfile__label" for="">Wybierz typ pliku: </label>
             <input list="type" class="formtype" name="filetype"> 

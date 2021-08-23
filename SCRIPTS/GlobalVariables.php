@@ -34,13 +34,16 @@
 
     $file_AddFileForm       = 'file';
     $typeFile_AddFileForm   = 'filetype';
-    $fileDescr_AddFileForm  ='description';
-    $fileTag_AddFileForm    ='tag0';
-    $fileTag1_AddFileForm   ='tag1';
-    $fileTag2_AddFileForm   ='tag2';
-    $fileTag3_AddFileForm   ='tag3';
-    $fileTag4_AddFileForm   ='tag4';
-    $fileTag5_AddFileForm   ='tag5';
+
+    $photoType_AddFileForm  = 'Zdjęcia';
+
+    $fileDescr_AddFileForm  = 'description';
+    $fileTag_AddFileForm    = 'tag0';
+    $fileTag1_AddFileForm   = 'tag1';
+    $fileTag2_AddFileForm   = 'tag2';
+    $fileTag3_AddFileForm   = 'tag3';
+    $fileTag4_AddFileForm   = 'tag4';
+    $fileTag5_AddFileForm   = 'tag5';
 
     $error_AddFileForm = '';
 
@@ -69,7 +72,7 @@
     // TODO
     // te same nazwy różnych zdjęć
 
-    $photosUploadTable  = 'Zdjecia';
+    $photosUploadTable  = 'zdjecia';
     $photosUploadFolder = 'uploads/zdjecia/';
 
     $sluchowiskoUploadTable  = 'Sluchowiska';
@@ -92,6 +95,6 @@
     // Tagi , nazwe itp
     ///////////////////////////
 
-    $usersUploads = '';
+    //$Photos_usersUploads = 'Zdjecia';
 
 ?>
