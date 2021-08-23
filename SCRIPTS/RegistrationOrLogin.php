@@ -35,11 +35,15 @@
                 // Zwykłe zapytanie czy mamy użytkowanika o taki emailu
                 $result = $db_Base->query("SELECT * FROM `{$usersTable}` WHERE `{$email_UsersTable_Col}` = '$UserEmail' ");
 
+                // Fałsz gdy nie udało się wykonać zapytania
+                if(!$result)
+                    throw new Exception("Błąd połączenia z bazą danych LOG");
+
                 // Gdy nie mamy takeigo użytkownika
-                if(!$result) 
+                if($result->num_rows == 0) 
                 {
                     // Brak wyników
-                    throw new Exception('Brak użytkownika o takim loginie lub błędne hasło'); 
+                    throw new Exception('Brak użytkownika o takim loginie lub błędne hasło LOG'); 
                 }
                 else
                 {
@@ -67,7 +71,7 @@
                         }
                         else
                         {
-                            throw new Exception('Błędne hasło'); 
+                            throw new Exception('Błędne hasło LOG'); 
                         }
                     }
                 }
@@ -79,7 +83,7 @@
                 // wiadomość w $e
                 $_SESSION[$error_LogInForm] = $e;
                 echo $e;
-                header('Location: ../PHP/Welcome.php');
+                header('Location: ../PHP/LogRegForm2.php');
             }
         }
         /*
@@ -103,8 +107,12 @@
                 // Zwykłe zapytanie czy mamy użytkowanika o taki emailu
                 $result = $db_Base->query("SELECT * FROM `{$usersTable}` WHERE `{$email_UsersTable_Col}` = '$UserEmail' "); 
 
+                // Fałsz gdy nie udało się wykonać zapytania
+                if(!$result)
+                    throw new Exception("Błąd połączenia z bazą danych LOG");
+                
                 //Gdy nie mamy takeigo użytkownika
-                if(!$result) 
+                if($result->num_rows == 0) 
                 {
                     //Dane użytkownika
                     $UserNick = $_POST[$nick_RegisForm];
@@ -125,20 +133,19 @@
                     {
                         // Udało się dodać użytkownika do bazy
                         $_SESSION[$error_RegisForm] = "Udana rejestracja teraz proszę się zaloguj";
-                        echo "Udana rejestracja teraz proszę się zaloguj";
                         header('Location: ../PHP/LogRegForm2.php'); 
                     }
                     else
                     {
                         // Nie udało się ....
-                        throw new Exception('Proszę spróbować jeszcze raz za jakiś czas');
+                        throw new Exception('Proszę spróbować jeszcze raz za jakiś czas REG');
                     }
                     
                 }
                 else
                 {
                     // Mamy już użytkownika o takim emailu
-                    throw new Exception('Istnieje już użytkownik o takim emailu'); 
+                    throw new Exception('Istnieje już użytkownik o takim emailu REG'); 
                 }
                   
             }
@@ -162,6 +169,10 @@
             //header('Location:../PHP/LogRegForm2.php'); 
         }
     }
+    /*
+        Jest to ostatnia opcja gdy ktoś tu trafi przez przypadek
+        lub wpisze adres z 'palca' będąc zalogowanym
+    */
     else
     {
         $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";

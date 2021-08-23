@@ -45,15 +45,14 @@ class Database
         // Załączamy nasze dane do połączenia
         require_once 'credits.php';
         //require 'credits.php';
-        /*
+        
         $Host="localhost";
         $db_user="root";
         $db_password="";
         $db_name="staz";
-        */
+        
         // Próba połączenia
         // Dane z credits.php
-        global $Host, $db_user, $db_password, $db_name;
         
 		$this->connection = new mysqli($Host, $db_user, $db_password, $db_name);
         

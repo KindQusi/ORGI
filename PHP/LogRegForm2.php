@@ -5,7 +5,7 @@
     session_start();
     if( isset($_SESSION[$isLogged]) )
     {
-        header('Location: Welcome.php'); // Uzytkownika cofamy do strony glownej/logowania
+        header('Location: Welcome.php'); // Uzytkownika cofamy do strony glownej
     }
     
 ?>
@@ -66,7 +66,11 @@
     <div class="alert">
         <p class="alert__error"> 
             <?php 
-                echo $_SESSION[$error_LogInForm].''.$_SESSION[$error_RegisForm];
+                if ( isset( $_SESSION[$error_LogInForm]) )
+                    echo $_SESSION[$error_LogInForm];
+                if ( isset( $_SESSION[$error_RegisForm]) )
+                    echo $_SESSION[$error_RegisForm];
+
                 unset($_SESSION[$error_LogInForm]);
                 unset($_SESSION[$error_RegisForm]);
             ?> 
