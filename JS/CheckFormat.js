@@ -6,6 +6,7 @@
         var fileSize = document.getElementById('file').files[0].size;
         return fileSize;
     });
+    
     newfile.addEventListener("change", (e) => {
         formatCheck(e);
     });
