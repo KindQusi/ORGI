@@ -35,13 +35,15 @@
         {
         ?>
 
-        <button class="header__button header__button--logout">Wyloguj się</button>
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled
+        value="<?php echo $_SESSION[$userCredits]->GetUserNick(); ?>" ></p>
+        <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj się</button>
 
         <?php
         }
         ?>
     </header>
-        <form class="container__form" action="addingFiles.php" method="POST">
+        <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST">
         <div class="addedfile__div">
             <label class="addedfile__label" for="">Wybierz typ pliku: </label>
             <input list="type" class="formtype"> 
