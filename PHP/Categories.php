@@ -1,3 +1,14 @@
+<?php
+    require_once '../SCRIPTS/accounts.php' ;
+    //require_once 'database.php' ;
+    require_once '../SCRIPTS/GlobalVariables.php';
+    session_start();
+    if( ! isset($_SESSION[$isLogged]) )
+    {
+        header('Location: ../PHP/LogRegForm2.php'); ; // Uzytkownika cofamy do strony logowania
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
