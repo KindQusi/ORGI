@@ -1,6 +1,4 @@
 {
-
-
     //główna część
     const newfile = document.querySelector(".addedfile");
     const addtagsbtn = document.querySelector(".addtagsbtn");
@@ -25,8 +23,10 @@
     });
     const Render = () => {
         let htmlString = "";
+        let i=0;
         for (const tag of tagstable) {
-            htmlString += `<li class="tagitem"><p class="tag"}>${tag.content}</p><button class="js-remove">x</button></li>`;
+            htmlString += `<li class="tagitem"><input name="tag${i}" class="tag" value="${tag.content}"}><button class="js-remove">x</button></li>`;
+            i++
         }
         document.querySelector(".tagslist").innerHTML = htmlString;
 

@@ -46,7 +46,7 @@
         <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST">
         <div class="addedfile__div">
             <label class="addedfile__label" for="">Wybierz typ pliku: </label>
-            <input list="type" class="formtype"> 
+            <input list="type" class="formtype" name="filetype"> 
         </div>
         <img class="addedfile__img" src="" alt="">
         <datalist id="type">
@@ -54,17 +54,17 @@
             <option value="Zdjęcia">
             <option value="Filmy">
         </datalist>
-            <input class="addedfile" type="file" id="file">
+            <input class="addedfile" type="file" id="file" name="file">
             <!-- <p class="filename"></p>
             <p class="format"></p>
             <p class="size"></p> -->
             <input type="text" class="addtags" placeholder="Add Tag">
             <input type="button" class="addtagsbtn" value="dodaj tag">
             <p class="tagslist"></p>
-            <textarea class="file__description" placeholder="Opis tu jebnij"></textarea>
+            <textarea class="file__description" placeholder="Opis tu jebnij" name="description"></textarea>
             <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
         </form>
-    <script src="/JS/CheckFormat.js"></script>
+    <script src="../JS/CheckFormat.js"></script>
 </body>
 
 </html>
