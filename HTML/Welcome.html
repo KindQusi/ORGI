@@ -14,12 +14,14 @@
 <body class="body">
     <header class="header">
         <button class="header__button">Jak to działa?</button>
-        <a href="../HTML/Categories.html"><button class="header__button">Przeglądaj</button></a>
-        <a href="../HTML/Welcome.html"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
-        <!-- <a href="../HTML/LogRegForm2.html"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
-        <a href="../HTML/LogRegForm2.html"><button class="header__button header__button--rightSide">Zarejestruj się</button></a> -->
-        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" value="Maciek" disabled></p>
-        <button class="header__button header__button--logout">Wyloguj się</button>
+        <button class="header__button">Dodaj plik</button>
+        <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
+        <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--rightSide">Zarejestruj się</button></a>
+        <!-- paragraf z inputem na  przywitanie użytkownika -->
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled></p>
+        <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj się</button>
     </header>
     <div class="main">
         <section class="section__img">

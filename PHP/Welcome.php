@@ -21,7 +21,8 @@
 
 <body class="body">
     <header class="header">
-        <button class="header__button">Jak to działa?</button>
+        <a href="../PHP/HowItWorks.php"><button class="header__button">Jak to działa?</button></a>
+        <a href="../PHP/Addfile.php"><button class="header__button">Dodaj plik</button></a>
         <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
         <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
 
@@ -29,8 +30,8 @@
             if ( !isset( $_SESSION[$isLogged] ) )
             {
         ?>
-        <button class="header__button header__button--leftSide">Zaloguj się</button>
-        <button class="header__button header__button--rightSide">Zarejestruj się</button>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--rightSide">Zarejestruj się</button></a>
         <?php 
             }
             else
