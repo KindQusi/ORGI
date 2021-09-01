@@ -37,14 +37,14 @@
     //1
     $photoType_AddFileForm      = 'Zdjęcia';
     //2
-    $efectType_AddFileForm      = '';
-    $bgmusicType_AddFileForm    = '';
-    $playType_AddFileForm       = '';
-    $reportageType_AddFileForm  = '';
+    $efectType_AddFileForm      = 'Efekty';
+    $bgmusicType_AddFileForm    = 'Podkłady';
+    $playType_AddFileForm       = 'Słuchowiska';
+    $reportageType_AddFileForm  = 'Reportaże';
     //3
-    $columnsType_AddFileForm    = '';
-    $storiesType_AddFileForm    = '';
-    $poemType_AddFileForm       = '';
+    $columnsType_AddFileForm    = 'Felietony';
+    $storiesType_AddFileForm    = 'Opowiadania';
+    $poemType_AddFileForm       = 'Poezja';
     /*
     1. Fotografia (podkategorie uzależnione od tagowania)
     2. Dźwięki
@@ -77,16 +77,16 @@
     $category_ChooseCategoryForm = 'sendCategory';
 
     //1
-    $categoryPhoto      ='';
+    $categoryPhoto      ='Zdjęcia';
     //2
-    $categoryEfect      ='';
-    $categoryBgmusic    ='';
-    $categoryplay       ='';
-    $categoryreportage  ='';
+    $categoryEfect      ='Efekty';
+    $categoryBgmusic    ='Podkłady';
+    $categoryplay       ='Słuchowiska';
+    $categoryreportage  ='Reportaże';
     //3
-    $categorycolumns    ='';
-    $categorystories    ='';
-    $categorypoem       ='';
+    $categorycolumns    ='Felietony';
+    $categorystories    ='Opowiadania';
+    $categorypoem       ='Poezja';
     /*
     1. Fotografia (podkategorie uzależnione od tagowania)
     2. Dźwięki

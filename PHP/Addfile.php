@@ -50,9 +50,15 @@
         </div>
         <img class="addedfile__img" src="" alt="">
         <datalist id="type">
-            <option value="">
+        <option value="">
             <option value="Zdjęcia">
-            <option value="Filmy">
+            <option value="Podkłady">
+            <option value="Efekty">
+            <option value="Słuchowiska">
+            <option value="Reportaże">
+            <option value="Felietony">
+            <option value="Opowiadania">
+            <option value="Poezja">
         </datalist>
             <input class="addedfile" type="file" id="file" name="file">
             <!-- <p class="filename"></p>

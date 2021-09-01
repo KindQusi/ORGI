@@ -2,11 +2,13 @@
     //główna część
     const newfile = document.querySelector(".addedfile");
     const addtagsbtn = document.querySelector(".addtagsbtn");
+    let setform = document.querySelector(".formtype");
+
     const fileSize = ("", () => {
         var fileSize = document.getElementById('file').files[0].size;
         return fileSize;
     });
-    
+
     newfile.addEventListener("change", (e) => {
         formatCheck(e);
     });
@@ -64,12 +66,17 @@
         // addedimg.src=fullPath;
         var image = document.querySelector('.addedfile__img');
         if (e === undefined) {
-            image.src = `../Photos/videoimg.png`;
+            return alert("Jakiś błąd :(");
+        }
+        else if (e === 1) {
+            image.src = `../Photos/Musicimg.jpg`;
+        }
+        else if (e === 2) {
+            image.src = `../Photos/Textimg.png`;
         }
         else {
             image.src = URL.createObjectURL(e.target.files[0]);
         }
-
     }
 
 
@@ -146,28 +153,74 @@
     });
     //sprawdzanie poprawności rozszerzenia pliku
     const checkform = ("", (roz, e) => {
-        let setform = document.querySelector(".formtype");
         let imageform = [
             { form: ".jpg" },
             { form: ".png" },
             { form: ".jpeg" },
+            { form: ".svg" },
         ];
-        let movieform = [
-            { form: ".mp4" },
-            { form: ".avi" },
-            { form: ".flv" },
+        let musicform = [
+            { form: ".mp3" },
+            { form: ".acc" },
+            { form: ".wma" },
+            { form: ".wav" },
         ];
+        let textform = [
+            { form: ".txt" },
+            { form: ".doc" },
+            { form: ".docx" },
+            { form: ".pdf" },
+            // { form: ".odt" },
+            // { form: ".wps" },
+        ];
+        
         let i = 0;
-        while (i < 2) {
+        while (i < 4) {
             if (setform.value === "Zdjęcia") {
                 if (roz.toLowerCase() === imageform[i].form) {
                     addimg(e);
                     return true;//alert("Plik poprawny"),
                 }
             }
-            else if (setform.value === "Filmy") {
-                if (roz.toLowerCase() === movieform[i].form) {
-                    addimg();
+            else if (setform.value === "Efekty") {
+                if (roz.toLowerCase() === musicform[i].form) {
+                    addimg(1);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Podkłady") {
+                if (roz.toLowerCase() === musicform[i].form) {
+                    addimg(1);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Słuchowiska") {
+                if (roz.toLowerCase() === musicform[i].form) {
+                    addimg(1);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Reportaże") {
+                if (roz.toLowerCase() === musicform[i].form) {
+                    addimg(1);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Felietony") {
+                if (roz.toLowerCase() === textform[i].form) {
+                    addimg(2);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Opowiadania") {
+                if (roz.toLowerCase() === textform[i].form) {
+                    addimg(2);
+                    return true;//alert("Plik poprawny")
+                }
+            }
+            else if (setform.value === "Poezja") {
+                if (roz.toLowerCase() === textform[i].form) {
+                    addimg(2);
                     return true;//alert("Plik poprawny")
                 }
             }
@@ -176,7 +229,7 @@
             }
             i++;
         }
-        if (i === 2) {
+        if (i === 4) {
             return alert("Zły plik!");
         }
     });
