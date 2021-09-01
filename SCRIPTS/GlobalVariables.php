@@ -4,6 +4,9 @@
     // Ścieżki
     ///////////////////////////
 
+    $root = $_SERVER["DOCUMENT_ROOT"];
+    $rootUploads = $root . '/TEST_UPLOADS/';
+
     ///////////////////////////
     // Log In / Registration form
     ///////////////////////////
@@ -69,14 +72,12 @@
     // Tablice na wrzuty 
     // zależnie od kategori
     ///////////////////////////
-    // TODO
-    // te same nazwy różnych zdjęć
 
     $photosUploadTable  = 'zdjecia';
-    $photosUploadFolder = 'uploads/zdjecia/';
+    $photosUploadFolder = '../uploads/zdjecia/';
 
     $sluchowiskoUploadTable  = 'Sluchowiska';
-    $sluchowiskoUploadFolder = 'uploads/sluchowiska/';
+    $sluchowiskoUploadFolder = '/uploads/sluchowiska/';
 
     $fileID_UploadsTable_Col     = 'ID';
     $userID_UploadsTable_Col     = 'ID_USER';

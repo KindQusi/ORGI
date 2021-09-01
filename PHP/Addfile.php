@@ -64,6 +64,28 @@
             <textarea class="file__description" placeholder="Opis tu jebnij" name="description"></textarea>
             <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
         </form>
+        <!--
+            Na szybko miejsce na errory przekopiowany z LogRegForm2
+        -->
+        <?php
+            if ( isset( $_SESSION[$error_AddFileForm]) )
+            {
+        ?>
+        <div class="alert">
+            <p style="color: white;"> 
+                <?php 
+                    if ( isset( $_SESSION[$error_AddFileForm]) )
+                        echo $_SESSION[$error_AddFileForm];
+                    unset($_SESSION[$error_AddFileForm]);
+                ?> 
+            </p>
+        </div>
+        <?php
+            }
+        ?>
+         <!--
+            Na szybko miejsce na errory przekopiowany z LogRegForm2
+        -->
     <script src="../JS/CheckFormat.js"></script>
 </body>
 

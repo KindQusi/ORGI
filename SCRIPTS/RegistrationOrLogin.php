@@ -166,7 +166,7 @@
         {
             $_SESSION[$error_LogInForm] = "Nie powinieneś tutaj trafić :) ";
             echo 'zzz';
-            //header('Location:../PHP/LogRegForm2.php'); 
+            header('Location:../PHP/LogRegForm2.php'); 
         }
     }
     /*

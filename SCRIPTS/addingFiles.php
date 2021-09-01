@@ -48,7 +48,16 @@
             // Gdy chcemy dodac coś czego nie mamy wywalamy error'a
             if ($target_dir == null || $target_table == null)
                 throw new Exception("Brak lub zła kategoria");
-            
+
+            /*
+            // Tworzymy folder na dane jeżeli nie istnieje
+            // 0777 jest to dostępność , ignorowana na widnowsie
+            // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne
+            if (!is_dir($target_dir))
+                if ( ! mkdir($target_dir, 0777, true) );
+                    throw new Exception("Nie udalo się utworzyć folderu dla tego pliku !!  " . $target_dir );
+            */
+
             // Do łączenia z bazą danych 
             $db = new Database();
             
@@ -76,7 +85,7 @@
             // 2.
             // Sprawdzamy czy mamy coś już takiego      
             if ( $resualt->num_rows != 0 )
-                throw new Exception("Mamy juz taki plik");
+                throw new Exception("Wrzuciłeś juz taki plik");
 
             // 3.
             // Sprawdzamy czy mamy dane uzytkownika
@@ -99,18 +108,22 @@
                 $fileTag1 = $_POST[$fileTag1_AddFileForm];
             else
                 $fileTag1 = 'Brak tagu1';
+
             if ( isset( $_POST[$fileTag2_AddFileForm] ) )
                 $fileTag2 = $_POST[$fileTag2_AddFileForm];
             else
                 $fileTag2 = 'Brak tagu2';
+
             if ( isset( $_POST[$fileTag3_AddFileForm] ) )
                 $fileTag3 = $_POST[$fileTag3_AddFileForm];
             else
                 $fileTag3 = 'Brak tagu3';
+
             if ( isset( $_POST[$fileTag4_AddFileForm] ) )
                 $fileTag4 = $_POST[$fileTag4_AddFileForm];
             else
                 $fileTag4 = 'Brak tagu4';
+
             if ( isset( $_POST[$fileTag5_AddFileForm] ) )
                 $fileTag5 = $_POST[$fileTag5_AddFileForm];
             else
@@ -171,9 +184,11 @@
                     // Bierzemy ID      
                     $id = $row[$fileID_UploadsTable_Col];
                     // Oddzielamy nazwę i rozszerzenie
-                    $temp = explode(".", $_FILES[$fileAddFileForm]["name"]);
+                    //$temp = explode(".", $_FILES[$file_AddFileForm]["name"]);
+                    $info = pathinfo($_FILES[$file_AddFileForm]["name"]);
+                    $ext = $info['extension'];
                     // Bierzemy ID i rozszerzenie
-                    $newfilename = $id . '.' . end($temp);
+                    $newfilename = $id . '.' . $ext;
                     // Robimy ścieżkę zapisu z nową nazwą
                     $target_file = $target_dir . $newfilename;
                 }
@@ -181,39 +196,58 @@
             else
                 throw new Exception("Nie uzyskaliśmy wyniku naszego wcześniejszego wrzutu");
 
+            
+            // Tworzymy folder na dane jeżeli nie istnieje
+            // 0777 jest to dostępność , ignorowana na widnowsie
+            // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne
+            //if (!is_dir($target_file))
+                //mkdir($rootUploads . $target_dir, 0777, true);    
+
             // 5.
             // Wstawiamy plik 
             // Jak się nie uda usuwamy info z bazy o nim
-            if (! move_uploaded_file($_FILES[$fileAddFileForm]["name"],$target_file ) )
+            if (! move_uploaded_file($_FILES[$file_AddFileForm]['tmp_name'],$target_file ) )
             {
                 // TODO
                 // Kwerenda do usuwania
-                $query = '';
+                $query = 
+                "DELETE FROM 
+                `{$target_table}`
+                WHERE
+                `{$fileName_UploadsTable_Col}` = '{$fileName}'
+                AND
+                `{$userID_UploadsTable_Col}` = '{$userID}'
+                ";
                 // Najgorszy przypadek gdy będziemy mieli wpis w bazie danych i nie uda się go usunać
                 if ( $db->query($query) )
-                    throw new Exception("Wystąpił błąd podczas próby zapisu pliku u nas, spróbuj ponownie");
+                    throw new Exception("Wystąpił błąd podczas próby zapisu pliku u nas, spróbuj ponownie  !! " . $target_file);
                 else    
                     throw new Exception("Błąd krytyczny proszę się skontaktować z administracją");
             }
-
-            // Udało nam się dodać plik do naszej bazy danych i zapisać na serwerze :)
-
-            
-            
+            else
+            {
+                // Udało nam się dodać plik do naszej bazy danych i zapisać na serwerze :)
+                $_SESSION[$error_AddFileForm] = 
+                'Udalo się dodać nowy plik: ' 
+                . $fileName.
+                ' . Dziękujemy za poszerzanie wspólnej biblioteki :)';
+                header('Location: ../PHP/Addfile.php');
+            }
         }
         catch(Exception $e)
         {
             $_SESSION[$error_AddFileForm] = $e;
             echo $e;
             // + przekierowanie
-            //header('Location: Home.php');
+            header('Location: ../PHP/Addfile.php');
         }
     
     }
     else
     {
-        echo "Nie zalogowano";
-        //header('Location: LogRegForm.html');
+        //echo "Nie zalogowano";
+        $_SESSION[$error_LogInForm] = 'Aby dodawać pliki trzeba być zalogowanym';
+        header('Location: ../PHP/LogRegForm2.php');
     }
 
 ?>
