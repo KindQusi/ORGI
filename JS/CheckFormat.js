@@ -4,6 +4,10 @@
     const addtagsbtn = document.querySelector(".addtagsbtn");
     let setform = document.querySelector(".formtype");
 
+    setform.addEventListener("change",()=>{
+        
+    });
+
     const fileSize = ("", () => {
         var fileSize = document.getElementById('file').files[0].size;
         return fileSize;

@@ -13,13 +13,19 @@
 
 <body class="body">
     <header class="header">
-
-        <button class="header__button header__button--leftSide">Jak to działa?</button>
-        <a href="../HTML/Categories.html"><button class="header__button">Przeglądaj</button></a>
-        <a href="../HTML/Welcome.html"><button class="header__button header__button--logo">ORGI</button></a>
-        <a href="../HTML/LogRegForm2.html"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
-        <a href="../HTML/LogRegForm2.html"><button class="header__button header__button--rightSide">Zarejestruj się</button></a>
-        <!-- <button class="header__button header__button--logout">Wyloguj się</button> -->
+        <a href="../PHP/HowItWorks.php"><button class="header__button">Jak to działa?</button></a>
+        <a href="../PHP/Addfile.php"><button class="header__button">Dodaj plik</button></a>
+        <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
+        <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--leftSide">Zaloguj
+                się</button></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--rightSide">Zarejestruj
+                się</button></a>
+        <!-- paragraf z inputem na  przywitanie użytkownika -->
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled
+                value="<?php echo $_SESSION[$userCredits]->GetUserNick(); ?>"></p>
+        <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj
+            się</button>
     </header>
     <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST">
         <div class="addedfile__div">

@@ -23,14 +23,43 @@
 </head>
 
 <body class="body">
-    <header class="header">
-        <button class="header__button">Jak to działa?</button>
+<header class="header">
+        <?php           
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
+        ?>
+        <a href="../PHP/HowItWorks.php"><button class="header__button">Jak to działa?</button></a>
+        <?php 
+            }
+            else
+            {
+        ?>
+        <a href="../PHP/Addfile.php"><button class="header__button">Dodaj plik</button></a>
+        <?php
+            }
+        ?>
         <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
         <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
-        <!-- <a href="../PHP/LogRegForm2.html"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
-        <a href="../PHP/LogRegForm2.html"><button class="header__button header__button--rightSide">Zarejestruj się</button></a> -->
-        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" value="Maciek" disabled></p>
-        <button class="header__button header__button--logout">Wyloguj się</button>
+
+        <?php           
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
+        ?>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--rightSide">Zarejestruj się</button></a>
+        <?php 
+            }
+            else
+            {
+        ?>
+        <!-- paragraf z inputem na  przywitanie użytkownika -->
+        <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled
+        value="<?php echo $_SESSION[$userCredits]->GetUserNick(); ?>" ></p>
+        <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj się</button>
+        <?php
+            }
+        ?>
+
     </header>
     <div class="container">
         <form class="container__form--category" action="../PHP/loadFiles.php" method="POST">

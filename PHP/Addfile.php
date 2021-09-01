@@ -5,7 +5,7 @@
     session_start();
     if( ! isset($_SESSION[$isLogged]) )
     {
-        header('Location: ../PHP/LogRegForm2.php'); ; // Uzytkownika cofamy do strony logowania
+        header('Location: ../PHP/LogRegForm2.php'); // Uzytkownika cofamy do strony logowania
     }
     
 ?>
@@ -24,24 +24,43 @@
 </head>
 
 <body class="body">
-    <header class="header">
-
-        <button class="header__button header__button--leftSide">Jak to działa?</button>
-        <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
-        <a href="../PHP/Welcome.php"><button class="header__button header__button--logo">ORGI</button></a>
-
-        <?php
-        if ( isset ( $_SESSION[$isLogged] ) )
-        {
+<header class="header">
+        <?php           
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
         ?>
+        <a href="../PHP/HowItWorks.php"><button class="header__button">Jak to działa?</button></a>
+        <?php 
+            }
+            else
+            {
+        ?>
+        <a href="../PHP/Addfile.php"><button class="header__button">Dodaj plik</button></a>
+        <?php
+            }
+        ?>
+        <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
+        <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
 
+        <?php           
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
+        ?>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--leftSide">Zaloguj się</button></a>
+        <a href="../PHP/LogRegForm2.php"><button class="header__button header__button--rightSide">Zarejestruj się</button></a>
+        <?php 
+            }
+            else
+            {
+        ?>
+        <!-- paragraf z inputem na  przywitanie użytkownika -->
         <p class="hi">Witaj, <input class="hiuser" name="hiuser" type="text" disabled
         value="<?php echo $_SESSION[$userCredits]->GetUserNick(); ?>" ></p>
         <button onclick="location.href='../SCRIPTS/logout.php'" class="header__button header__button--logout">Wyloguj się</button>
-
         <?php
-        }
+            }
         ?>
+
     </header>
         <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST" enctype="multipart/form-data">
         <div class="addedfile__div">
