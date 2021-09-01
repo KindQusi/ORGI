@@ -33,7 +33,7 @@
         <button class="header__button header__button--logout">Wyloguj się</button>
     </header>
     <div class="container">
-        <form class="container__form--category" action="" method="POST">
+        <form class="container__form--category" action="../PHP/loadFiles.php" method="POST">
             <div class="container__category">
                 <div >
                     <div class="container__category--img container__category--foto" id="imgfoto"></div>

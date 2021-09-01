@@ -52,13 +52,13 @@ music.addEventListener("mouseover", () => {
                 <a href="../PHP/Browser.php" class="p">Podkłady</a>
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Efekty(sample)</a>
+                <a href="../PHP/Browser.php" class="p">Efekty</a>
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Słuchowiska + YT</a>
+                <a href="../PHP/Browser.php" class="p">Słuchowiska</a>
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Reportaże + YT</a>
+                <a href="../PHP/Browser.php" class="p">Reportaże</a>
             </li>
         </ul>
     </div>`;
