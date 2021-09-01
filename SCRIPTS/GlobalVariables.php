@@ -35,10 +35,32 @@
     // 6 tagów obowiązkowych
     // 
 
-    $file_AddFileForm       = 'file';
-    $typeFile_AddFileForm   = 'filetype';
-
-    $photoType_AddFileForm  = 'Zdjęcia';
+    $file_AddFileForm           = 'file';
+    $typeFile_AddFileForm       = 'filetype';
+    //1
+    $photoType_AddFileForm      = 'Zdjęcia';
+    //2
+    $efectType_AddFileForm      = '';
+    $bgmusicType_AddFileForm    = '';
+    $playType_AddFileForm       = '';
+    $reportageType_AddFileForm  = '';
+    //3
+    $columnsType_AddFileForm    = '';
+    $storiesType_AddFileForm    = '';
+    $poemType_AddFileForm       = '';
+    /*
+    1. Fotografia (podkategorie uzależnione od tagowania)
+    2. Dźwięki
+    - efekty (sample)
+    - podkłady
+    - słuchowiska + YouTube
+    - reportaże + YouTube
+    3. Teksty
+    - felietony
+    - opowiadania
+    - poezja.
+    */
+    
 
     $fileDescr_AddFileForm  = 'description';
     $fileTag_AddFileForm    = 'tag0';
@@ -73,11 +95,44 @@
     // zależnie od kategori
     ///////////////////////////
 
+    //1
     $photosUploadTable  = 'zdjecia';
     $photosUploadFolder = '../uploads/zdjecia/';
 
-    $sluchowiskoUploadTable  = 'Sluchowiska';
-    $sluchowiskoUploadFolder = '/uploads/sluchowiska/';
+    //2
+    $efectUploadTable      = 'efekty';
+    $efectUploadFolder     = '../uploads/efekty/';
+
+    $bgmusicUploadTable    = 'podklady';
+    $bgmusicUploadFolder   = '../uploads/podklady/';
+
+    $playUploadTable       = 'sluchowiska';
+    $playUploadFolder      = '../uploads/sluchowiska/';
+
+    $reportageUploadTable  = 'reportaze';
+    $reportageUploadFolder = '../uploads/reportaze/';
+
+    //3
+    $columnsUploadTable    = 'felietony';
+    $columnsUploadFolder   = '../uploads/felietony/';
+
+    $storiesUploadTable    = 'opowiadania';
+    $storiesUploadFolder   = '../uploads/opowiadania/';
+
+    $poemUploadTable       = 'poejza';
+    $poemUploadFolder      = '../uploads/poezja/';
+    /*
+    1. Fotografia (podkategorie uzależnione od tagowania)
+    2. Dźwięki
+    - efekty (sample)
+    - podkłady
+    - słuchowiska + YouTube
+    - reportaże + YouTube
+    3. Teksty
+    - felietony
+    - opowiadania
+    - poezja.
+    */
 
     $fileID_UploadsTable_Col     = 'ID';
     $userID_UploadsTable_Col     = 'ID_USER';
