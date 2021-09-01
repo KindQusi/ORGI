@@ -38,91 +38,69 @@
         <div class="main__ItemsWindow">
             <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
+                <div class="about_tags">
+                    <div class="Item__about">
+                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
+                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
+                            qui, et quas temporibus explicabo dolor corporis iste.</p>
+                    </div>
+                    <div class="tags">
+                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
+                    </div>
                 </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
+                <div class="Item__Tag__Btn">
+                    <button class="more Btn">Wincyj</button>
+                    <button class="download Btn">Pobierz</button>
+                    <p class="Item__tags"> np format pliku</p>
+                    <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
+
+
             <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
+                <div class="about_tags">
+                    <div class="Item__about">
+                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
+                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
+                            qui, et quas temporibus explicabo dolor corporis iste.</p>
+                    </div>
+                    <div class="tags">
+                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
+                    </div>
                 </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
+                <div class="Item__Tag__Btn">
+                    <button class="more Btn">Wincyj</button>
+                    <button class="download Btn">Pobierz</button>
+                    <p class="Item__tags"> np format pliku</p>
+                    <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
+
+
             <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
+                <div class="about_tags">
+                    <div class="Item__about">
+                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
+                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
+                            qui, et quas temporibus explicabo dolor corporis iste.</p>
+                    </div>
+                    <div class="tags">
+                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
+                    </div>
                 </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div>
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
-                </div>
-            </div> <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="Item__desription">
-                    <p class="Item__desription--text">jakiś tam tekścik</p>
-                </div>
-                <div class="Item__tags">
-                   <p class="Item__tags--text"> taki tu tak pierdyknąć</p>
+                <div class="Item__Tag__Btn">
+                    <button class="more Btn">Wincyj</button>
+                    <button class="download Btn">Pobierz</button>
+                    <p class="Item__tags"> np format pliku</p>
+                    <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
         </div>

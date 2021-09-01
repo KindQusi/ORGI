@@ -1,8 +1,10 @@
 .main {
     width: 100%;
+    min-height: 100%;
     display: flex;
     padding: 100px 2% 1% 2%;
     justify-content: center;
+    min-width: 650px;
 }
 
 .main__sidebar {
@@ -14,28 +16,97 @@
 
 .main__ItemsWindow {
     padding: 50px;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    row-gap: 20px;
+    /* grid-template-columns: repeat(1, 1fr); */
 }
 
 .main__ItemsWindow--itemBox {
+    display: flex;
     max-width: 250px;
+    max-height: 150px;
     color: white;
-    background: yellowgreen;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #711621;
     min-width: 100%;
 }
-
-.Item__img {
+.main__ItemsWindow--itemBox:hover {
+    box-shadow: 0 0 10px 5px #711621;
+}
+.Item__about{
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    border: 1px solid hsl(353, 67%, 16%);
+    padding: 5px;
+    overflow: hidden;
+}
+.Item__img {
+    width: 200px;
+    max-height: 200px;
     
 }
 
-.Item__tags--text {
+.Item__tags {
     margin: 0%;
 }
 
-.Item__desription--text {
+.Item__title{
+margin: 10px 5px;
+font-weight: bold;
+font-size: 15px;
+color: hsl(0, 0%, 90%);
+}
+.Item__desription{
     margin: 0%;
+    font-size: 13px;
+    color: hsl(0, 0%, 50%);
+}
+.Item__Tag__Btn{
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    padding: 5px;
+}
+.download{
+    background-color: #711621;
+    color: white;
+    border:none;
+    border:1px solid transparent;
+}
+.more{
+    border:1px solid #711621;
+    background-color: transparent;
+    color: #711621;
+}
+
+.more:hover{
+    border:1px solid transparent;
+    background-color: #711621;
+    color: white;
+    box-shadow: 0 0 5px 5px #711621;
+}
+.download:hover{
+    border:1px solid #711621;
+    background-color: transparent;
+    color: #711621;
+    box-shadow: 0 0 10px 5px #711621;
+}
+.Btn{
+    margin: 10px;
+    padding: 5px;
+    min-width: 50%;
+    max-width: 100%;
+}
+.about_tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tags{
+    padding: 5px;
+    border:1px solid hsl(353, 67%, 16%);
 }
