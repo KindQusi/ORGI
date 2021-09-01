@@ -31,9 +31,6 @@
     ///////////////////////////
     // Adding product form
     ///////////////////////////
-    // LISTA TAGÓW
-    // 6 tagów obowiązkowych
-    // 
 
     $file_AddFileForm           = 'file';
     $typeFile_AddFileForm       = 'filetype';
@@ -69,14 +66,39 @@
     $fileTag3_AddFileForm   = 'tag3';
     $fileTag4_AddFileForm   = 'tag4';
     $fileTag5_AddFileForm   = 'tag5';
-
-    $error_AddFileForm = '';
+    
+    // Dzialalo bez wpisanego?
+    $error_AddFileForm = 'error_AddFileForm';
 
     ///////////////////////////
     // Choose cathegory form
     ///////////////////////////
 
-    $category_ChooseCategoryForm = '';
+    $category_ChooseCategoryForm = 'sendCategory';
+
+    //1
+    $categoryPhoto      ='';
+    //2
+    $categoryEfect      ='';
+    $categoryBgmusic    ='';
+    $categoryplay       ='';
+    $categoryreportage  ='';
+    //3
+    $categorycolumns    ='';
+    $categorystories    ='';
+    $categorypoem       ='';
+    /*
+    1. Fotografia (podkategorie uzależnione od tagowania)
+    2. Dźwięki
+    - efekty (sample)
+    - podkłady
+    - słuchowiska + YouTube
+    - reportaże + YouTube
+    3. Teksty
+    - felietony
+    - opowiadania
+    - poezja.
+    */
 
         // Bazy danych
     ///////////////////////////

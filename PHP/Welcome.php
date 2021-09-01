@@ -21,8 +21,20 @@
 
 <body class="body">
     <header class="header">
+        <?php           
+            if ( !isset( $_SESSION[$isLogged] ) )
+            {
+        ?>
         <a href="../PHP/HowItWorks.php"><button class="header__button">Jak to działa?</button></a>
+        <?php 
+            }
+            else
+            {
+        ?>
         <a href="../PHP/Addfile.php"><button class="header__button">Dodaj plik</button></a>
+        <?php
+            }
+        ?>
         <a href="../PHP/Categories.php"><button class="header__button">Przeglądaj</button></a>
         <a href="../PHP/Welcome.php"><img class="header__logo" src="../Photos/orgilogo_biae.png" alt=""></a>
 
