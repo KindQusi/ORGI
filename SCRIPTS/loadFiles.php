@@ -9,10 +9,13 @@
 
     */
 
-    session_start();
+session_start();
     require_once 'accounts.php' ;
     require_once 'database.php' ;
     require_once 'GlobalVariables.php';
+
+    //header('Location: ../PHP/Browser.php');
+    //exit();
 
     try
     {
@@ -22,52 +25,37 @@
             $dir    = null;
             switch ($_POST[$category_ChooseCategoryForm])
             {
-                case 'zdjecia':
+                case $categoryPhoto:
                     $dir = $photosUploadFolder;
                     break;
                 case 'sluchowisko':
                     $dir = $sluchowiskoUploadFolder;
                     break;
             }
-            if ( $files = scandir($dir) )
+            
+            if ( empty($dir) )
+                throw new Exception("Brak takiej kategori: " . $_POST[$category_ChooseCategoryForm] );
+
+            // Skanujemy i opcinamy dwa pierwsze wyniki
+            // $files = array_diff(scandir($dir), array('.', '..'));
+            $files = array_values(array_diff(scandir($dir), array('..', '.')));
+
+            if ( !empty($files) )
             {
-                
-                /*
-                    Jako że scandir wczytuje cały katalog wstępnie ustalimy że na stronę
-                    możemy załadować na raz np 10 rzeczy.
-                    whichPage będzie przechowywało nam od którego zaczynamy wczytywać 
-
-                    czyli np gdy jestesmy na pierwszej stronie to page bedzie 0 wiec wczytujemy z zakresu 0-9
-                    na drugiej which page bedzie 10 i zaczniemy od 10 do 19
-                */
-
-                $whichPage = 0;
-
-                if( isset ( $_SESSION['whichPage'] ) )
-                    $whichPage = $_SESSION['whichPage'];
-
-                $idFile = 0 + $whichPage;
-                $maxidFile = 9 + $whichPage;
-                while ($idFile <= $whichPage)
-                {
-                    // Jeżeli mamy np tylko 6 to nie wyswietlimy 7,8,9
-                    if ($files[$idFile] == null)
-                        break;
-                    print_r($files[$idFile]);
-                    $idFile++;
-                }
+                print_r($files);
             }
             else
                 throw new Exception("Nie znaleziono plików");
         }
         else
         {
-            throw new Exception(" ");
+            throw new Exception("Nie zalogowano albo nie wybrano kategori");
         }
     }  
     catch (Exception $e)
     {
         $_SESSION[''] = $e;
-        header('');
+        echo $e;
+        //header('');
     }
 ?>

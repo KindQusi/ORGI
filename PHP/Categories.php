@@ -62,7 +62,7 @@
 
     </header>
     <div class="container">
-        <form class="container__form--category" action="../PHP/loadFiles.php" method="POST">
+        <form class="container__form--category" action="../SCRIPTS/loadFiles.php" method="POST">
             <div class="container__category">
                 <div >
                     <div class="container__category--img container__category--foto" id="imgfoto"></div>
@@ -81,7 +81,7 @@
             <div class="container__categories">
 
             </div>
-            <input class="sendCategory" type="hidden" name="sendCategory" value="">
+            <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia">
         </form>
     </div>
     <script src="../JS/Categories.js"></script>
