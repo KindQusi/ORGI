@@ -2,10 +2,21 @@
     require_once '../SCRIPTS/accounts.php' ;
     //require_once 'database.php' ;
     require_once '../SCRIPTS/GlobalVariables.php';
+    require_once '../SCRIPTS/FileManager.php';
     session_start();
+
+    $files = null;
+
     if( ! isset($_SESSION[$isLogged]) )
     {
         header('Location: ../PHP/LogRegForm2.php'); // Uzytkownika cofamy do strony logowania
+    }
+    // Sprawdzamy czy mamy kategorie
+    else if ( isset ($_POST[$category_ChooseCategoryForm]))
+    {
+        // Bierzemy pliki danej kategorii
+        $fileManager = new fileManager();
+        $files = $fileManager -> LoadFiles($_POST[$category_ChooseCategoryForm]);
     }
     
 ?>
@@ -65,11 +76,19 @@
             <h3>Kategorie</h3>
         </div>
         <div class="main__ItemsWindow">
+
+        <?php
+            if ( !empty($files))
+            {
+                foreach( $files as $file)
+                {
+        ?>
+
             <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../Photos/orgi logo.png" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
-                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="Item__title"> <?php echo $file ?> </p>
                         <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
                             veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
@@ -86,52 +105,12 @@
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
+        
+        <?php
+                }
+            }
+        ?>
 
-
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="about_tags">
-                    <div class="Item__about">
-                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
-                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
-                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
-                            qui, et quas temporibus explicabo dolor corporis iste.</p>
-                    </div>
-                    <div class="tags">
-                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
-                    </div>
-                </div>
-                <div class="Item__Tag__Btn">
-                    <button class="more Btn">Wincyj</button>
-                    <button class="download Btn">Pobierz</button>
-                    <p class="Item__tags"> np format pliku</p>
-                    <p class="Item__tags"> np rozmiar pliku</p>
-                </div>
-            </div>
-
-
-            <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
-                <div class="about_tags">
-                    <div class="Item__about">
-                        <p class="Item__title">jakiś tam tekścik w tytule Lorem ipsum dolor sit amet consectetur.</p>
-                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
-                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
-                            qui, et quas temporibus explicabo dolor corporis iste.</p>
-                    </div>
-                    <div class="tags">
-                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
-                    </div>
-                </div>
-                <div class="Item__Tag__Btn">
-                    <button class="more Btn">Wincyj</button>
-                    <button class="download Btn">Pobierz</button>
-                    <p class="Item__tags"> np format pliku</p>
-                    <p class="Item__tags"> np rozmiar pliku</p>
-                </div>
-            </div>
         </div>
     </div>
 </body>
