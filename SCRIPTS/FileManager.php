@@ -27,12 +27,15 @@ class fileManager
             if ( empty($dir) )
                 //throw new Exception("Brak takiej kategori: " . $_POST[$category_ChooseCategoryForm] );
                 return null;
-            $files = array_values(array_diff(scandir($dir), array('..', '.')));
+
+            $files = array_diff(scandir($dir), array('..', '.'));
+            $files [0] = $dir;
+            //$files = array_values($files);
 
             if ( !empty($files) )
             {
                 return $files;
-            }
+            }   
             else
                 //throw new Exception("Nie znaleziono plików");
                 return null;

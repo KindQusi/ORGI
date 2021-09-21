@@ -80,15 +80,23 @@
         <?php
             if ( !empty($files))
             {
-                foreach( $files as $file)
+                $missFirst = 1;
+                foreach( $files as $i => $file)
                 {
+                    if ( $i == 0)
+                    {
+                        //$missFirst++;
+                    }
+                    else
+                    {
+                    $link = $files[0].$file;
         ?>
 
             <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../Photos/orgi logo.png" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
-                        <p class="Item__title"> <?php echo $file ?> </p>
+                        <p class="Item__title"> <?php echo $file.' '.$i; ?> </p>
                         <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
                             veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
@@ -100,13 +108,14 @@
                 </div>
                 <div class="Item__Tag__Btn">
                     <button class="more Btn">Wincyj</button>
-                    <button class="download Btn">Pobierz</button>
+                    <a href ="<?php echo $link; ?>" download="<?php echo $file; ?>"><button class="download Btn" >Pobierz</button></a>
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
         
-        <?php
+        <?php   
+                    }
                 }
             }
         ?>
