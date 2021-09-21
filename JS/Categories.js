@@ -12,7 +12,7 @@ foto.addEventListener("mouseover", () => {
     <div class="container__categories--foto">
     <ul class="categories__list">
         <li class="categories__list--item">
-        <a href="../PHP/Browser.php" class="p">Zdjęcia</a>
+        <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia">
         </li>
         <li class="categories__list--item">
             Tag2
@@ -40,25 +40,21 @@ foto.addEventListener("mouseover", () => {
 
 music.addEventListener("mouseover", () => {
     if (lastMouseOverCategories !== 'music') {
-        
         categories.classList.add("container__categories--active");
         categories.innerHTML = `
     <div class="container__categories--music">
         <ul class="categories__list">
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Muzyka</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Podkłady">
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Podkłady</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Efekty">
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Efekty</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Słuchowiska">
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Słuchowiska</a>
-            </li>
-            <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Reportaże</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Reportaże">
             </li>
         </ul>
     </div>`;
@@ -84,16 +80,13 @@ text.addEventListener("mouseover", () => {
     <div class="container__categories--text">
         <ul class="categories__list">
             <li class="categories__list--item">
-                <a href="Browser.php" class="p">Text</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Felietony">
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Felietony</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Opowiadania">
             </li>
             <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Opowiadania</a>
-            </li>
-            <li class="categories__list--item">
-                <a href="../PHP/Browser.php" class="p">Poezja</a>
+                <input class="sendCategory" type="submit" name="sendCategory" value="Poezja">
             </li>
         </ul>
     </div>`;

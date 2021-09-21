@@ -81,7 +81,7 @@
             <div class="container__categories">
 
             </div>
-            <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia">
+            <!-- <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia"> -->
         </form>
     </div>
     <script src="../JS/Categories.js"></script>
