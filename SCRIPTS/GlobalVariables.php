@@ -159,7 +159,9 @@
     $fileID_UploadsTable_Col     = 'ID';
     $userID_UploadsTable_Col     = 'ID_USER';
     $fileName_UploadsTable_Col   = 'NazwaPliku';
+    $typeFile_UploadsTable_Col   = 'Typ'; // TODO
     $descr_UploadsTable_Col      = 'Opis';
+
     $Tag_UploadsTable_Col        = 'Tag';
     $Tag1_UploadsTable_Col       = 'Tag1';
     $Tag2_UploadsTable_Col       = 'Tag2';

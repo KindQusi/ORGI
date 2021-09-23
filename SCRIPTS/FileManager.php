@@ -6,26 +6,16 @@
 class fileManager
 {
 
-    public function LoadFiles($category)
+    public function LoadFiles($targetDir)
     {
         try
         {
             include 'GlobalVariables.php';
             
-            if ( empty($category) )
-                //throw new Exception("Pusta kategoria");
-                return null;
-            
             $files  = null;
-            $dir    = null;
-            switch ($category)
-            {
-                case $categoryPhoto:
-                    $dir = $photosUploadFolder;
-                    break;
-            }
+            $dir    = $targetDir;
+
             if ( empty($dir) )
-                //throw new Exception("Brak takiej kategori: " . $_POST[$category_ChooseCategoryForm] );
                 return null;
 
             $files = array_diff(scandir($dir), array('..', '.'));
@@ -37,7 +27,6 @@ class fileManager
                 return $files;
             }   
             else
-                //throw new Exception("Nie znaleziono plików");
                 return null;
         }
 
@@ -47,5 +36,6 @@ class fileManager
         }
     }
 
+    
 }
 ?>

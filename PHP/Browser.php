@@ -1,8 +1,11 @@
 <?php
+/*
+    Tutaj powinniśmy dostać jaką kategorię chce użytkownik i przekazać do osobnego skryptu
+    który nam zwróci gotową tablicę do wyświetlenia wraz z plikami oraz informacjami o nich.
+*/
     require_once '../SCRIPTS/accounts.php' ;
-    //require_once 'database.php' ;
     require_once '../SCRIPTS/GlobalVariables.php';
-    require_once '../SCRIPTS/FileManager.php';
+    require_once '../SCRIPTS/BrowserPrepare.php';
     session_start();
 
     $files = null;
@@ -14,9 +17,7 @@
     // Sprawdzamy czy mamy kategorie
     else if ( isset ($_POST[$category_ChooseCategoryForm]))
     {
-        // Bierzemy pliki danej kategorii
-        $fileManager = new fileManager();
-        $files = $fileManager -> LoadFiles($_POST[$category_ChooseCategoryForm]);
+        $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm]);//$fileManager -> LoadFiles($_POST[$category_ChooseCategoryForm]);
     }
     
 ?>
@@ -80,42 +81,30 @@
         <?php
             if ( !empty($files))
             {
-                $missFirst = 1;
                 foreach( $files as $i => $file)
-                {
-                    if ( $i == 0)
-                    {
-                        //$missFirst++;
-                    }
-                    else
-                    {
-                    $link = $files[0].$file;
+                {         
         ?>
 
             <div class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="../Photos/orgi logo.png" alt="">
+                <img class="Item__img" src="<?php echo $files[$i][0]; ?> ?>" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
-                        <p class="Item__title"> <?php echo $file.' '.$i; ?> </p>
-                        <p class="Item__desription">jakiś tam opisik Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Velit culpa, sequi illum sed cum vero, est quia voluptatibus exercitationem facere
-                            veniam eligendi ipsam qui asperiores nemo repellat numquam voluptates officiis. Quos eius
-                            qui, et quas temporibus explicabo dolor corporis iste.</p>
+                        <p class="Item__title"> <?php echo array_values(explode(".",$files[$i][2]) )[0]; ?> </p>
+                        <p class="Item__desription"><?php echo $files[$i][3]; ?></p>
                     </div>
                     <div class="tags">
-                        <p class="Item__tags"> taki tu tag pierdyknąć</p>
+                        <p class="Item__tags"> <?php echo $files[$i][4]; ?></p>
                     </div>
                 </div>
                 <div class="Item__Tag__Btn">
                     <button class="more Btn">Wincyj</button>
-                    <a href ="<?php echo $link; ?>" download="<?php echo $file; ?>"><button class="download Btn" >Pobierz</button></a>
+                    <a href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2]; ?>"><button class="download Btn" >Pobierz</button></a>
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
         
-        <?php   
-                    }
+        <?php                    
                 }
             }
         ?>

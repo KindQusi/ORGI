@@ -17,6 +17,8 @@
     require_once 'accounts.php' ;
     require_once 'database.php' ;
     require_once 'GlobalVariables.php';
+    include 'Switch.php';
+
     session_start();
     /*
         Dostaniemy się tu gdy użytkownik jest zalogowany oraz wypełnił formularz
@@ -25,53 +27,15 @@
     {
         try
         {   
-            // 1.
-            // Tworzymy zmienne
-            $target_dir = null;
-            $target_table = null;
-
-            // TODO
+                 
             // Sprawdzamy co użytkownik dodaje i czy 
-            // jest to odpowiednia rzecz
-            switch ($_POST[$typeFile_AddFileForm]) {
-                    //Photos
-                case $photoType_AddFileForm:
-                    $target_table   = $photosUploadTable;
-                    $target_dir     = $photosUploadFolder;
-                    break;
-                    //Sounds
-                case $efectType_AddFileForm:
-                    $target_table   = $efectUploadTable;
-                    $target_dir     = $efectUploadFolder;
-                    break;
-                case $bgmusicType_AddFileForm:
-                    $target_table   = $bgmusicUploadTable;
-                    $target_dir     = $bgmusicUploadFolder;
-                    break;
-                case $playType_AddFileForm:
-                    $target_table   = $playUploadTable;
-                    $target_dir     = $playUploadFolder;
-                    break;
-                case $reportageType_AddFileForm:
-                    $target_table   = $reportageUploadTable;
-                    $target_dir     = $reportageUploadFolder;
-                    break;
-                    //Txt
-                case $columnsType_AddFileForm:
-                    $target_table   = $columnsUploadTable;
-                    $target_dir     = $columnsUploadFolder;
-                    break;
-                case $storiesType_AddFileForm:
-                    $target_table   = $storiesUploadTable;
-                    $target_dir     = $storiesUploadFolder;
-                    break;
-                case $poemType_AddFileForm:
-                    $target_table   = $poemUploadTable;
-                    $target_dir     = $poemUploadFolder;
-                    break;
-                
-                // Dodać kolejne kategorie
-            }
+            // jest to odpowiednia rzecz         
+            $infoCategory = WhatCategory($_POST[$typeFile_AddFileForm]);
+            // Tablica informacji
+            // 0 - Target_dir
+            // 1 - Target_table
+            $target_dir = $infoCategory[0];
+            $target_table = $infoCategory[1];
 
             // Gdy chcemy dodac coś czego nie mamy wywalamy error'a
             if ($target_dir == null || $target_table == null)
@@ -165,18 +129,21 @@
             $fileTag4   = $_POST[$fileTag4_AddFileForm];
             $fileTag5   = $_POST[$fileTag5_AddFileForm];
             */
+            // Wyciagamy rozszerzenie
+            $info = pathinfo($_FILES[$file_AddFileForm]["name"]);
+            $ext = $info['extension'];
             // Zapytanie wstawiania pliku
             $query = 
             "INSERT INTO 
             `{$target_table}`
             (
-            `{$userID_UploadsTable_Col}`,`{$fileName_UploadsTable_Col}`,`{$descr_UploadsTable_Col}`,
+            `{$userID_UploadsTable_Col}`,`{$fileName_UploadsTable_Col}`,`{$typeFile_UploadsTable_Col}`,`{$descr_UploadsTable_Col}`,
             `{$Tag_UploadsTable_Col}`,`{$Tag1_UploadsTable_Col }`,`{$Tag2_UploadsTable_Col }`,
             `{$Tag3_UploadsTable_Col }`,`{$Tag4_UploadsTable_Col }`,`{$Tag5_UploadsTable_Col }`
             )           
             VALUES 
             (
-            '{$userID}','{$fileName}','{$fileDesc}',
+            '{$userID}','{$fileName}','{$ext}','{$fileDesc}',
             '{$fileTag}','{$fileTag1}','{$fileTag2}',
             '{$fileTag3}','{$fileTag4}','{$fileTag5}'
             )"; 
@@ -213,8 +180,8 @@
                     $id = $row[$fileID_UploadsTable_Col];
                     // Oddzielamy nazwę i rozszerzenie
                     //$temp = explode(".", $_FILES[$file_AddFileForm]["name"]);
-                    $info = pathinfo($_FILES[$file_AddFileForm]["name"]);
-                    $ext = $info['extension'];
+                    //$info = pathinfo($_FILES[$file_AddFileForm]["name"]);
+                    //$ext = $info['extension'];
                     // Bierzemy ID i rozszerzenie
                     $newfilename = $id . '.' . $ext;
                     // Robimy ścieżkę zapisu z nową nazwą

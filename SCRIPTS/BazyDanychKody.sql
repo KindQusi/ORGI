@@ -37,6 +37,7 @@ CREATE TABLE Zdjecia (
 ID          int          NOT NULL AUTO_INCREMENT,
 ID_USER     int          NOT NULL, -- Osoba dodajaca
 NazwaPliku  VARCHAR(30)  NOT NULL,
+Typ         VARCHAR(30)  NOT NULL,
 Opis        TEXT         NOT NULL, -- longtxt?
 Tag         VARCHAR(40)  NOT NULL,
 Tag1        VARCHAR(40) ,
