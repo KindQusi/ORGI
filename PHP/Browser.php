@@ -14,7 +14,7 @@
     {
         header('Location: ../PHP/LogRegForm2.php'); // Uzytkownika cofamy do strony logowania
     }
-    // Sprawdzamy czy mamy kategorie
+    Sprawdzamy czy mamy kategorie
     else if ( isset ($_POST[$category_ChooseCategoryForm]))
     {
         $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm]);//$fileManager -> LoadFiles($_POST[$category_ChooseCategoryForm]);
@@ -75,6 +75,14 @@
     <div class="main">
         <div class="main__sidebar">
             <h3>Kategorie</h3>
+            <ul class="main__Categories">
+                <li class="main__Category">Memy</li>
+                <li class="main__Category">Memy</li>
+                <li class="main__Category">Memy</li>
+                <li class="main__Category">Memy</li>
+                <li class="main__Category">Memy</li>
+                <li class="main__Category">Memy</li>
+            </ul>
         </div>
         <div class="main__ItemsWindow">
 
@@ -109,6 +117,32 @@
             }
         ?>
 
+        <div class="main__ItemsWindow--itemBox">
+                <img class="Item__img" src="../uploads/zdjecia/1.png" alt="">
+                <div class="about_tags">
+                    <div class="Item__about">
+                        <p class="Item__title">Lorem, ipsum dolor. </p>
+                        <p class="Item__desription">iksde Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, officia reprehenderit nemo amet commodi quasi iure quia dolorum numquam quos!</p>
+                    </div>
+                    <div class="tags">
+                        <p class="Item__tags">Lorem.</p>
+                    </div>
+                </div>
+                <div class="Item__Tag__Btn">
+                    <button class="more Btn">Wincyj</button>
+                    <a href ="" download=""><button class="download Btn" >Pobierz</button></a>
+                    <p class="Item__tags"> np format pliku</p>
+                    <p class="Item__tags"> np rozmiar pliku</p>
+                </div>
+            </div>
+                <ul class="pagination">
+                    <li><a href="#0" class="page">| <<</a></li>
+                    <li><a href="#1" class="page"><<</a></li>
+                    <li><a href="#2" class="page">1</a></li>
+                    <li><a href="#3" class="page">2</a></li>
+                    <li><a href="#4" class="page">>></a></li>
+                    <li><a href="#5" class="page">>> |</a></li>
+                </ul>
         </div>
     </div>
 </body>

@@ -4,14 +4,29 @@
     display: flex;
     padding: 100px 2% 1% 2%;
     justify-content: center;
-    min-width: 650px;
+    min-width: 750px;
 }
-
+.body{
+    min-width: 750px;
+}
 .main__sidebar {
+    padding: 15px;
     color: white;
     background-color: #711621;
-    min-height: 100%;
+    height: 100%;
+    min-height: 100vh;
     max-width: 300px;
+}
+
+.main__Categories {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.main__Category {
+    margin:10px 0px;
+    font-weight: bold;
 }
 
 .main__ItemsWindow {
@@ -26,87 +41,134 @@
 
 .main__ItemsWindow--itemBox {
     display: flex;
-    max-width: 250px;
+    justify-content: space-between;
+    max-width: 100%px;
     max-height: 150px;
     color: white;
     background: rgba(255, 255, 255, 0);
     border: 1px solid #711621;
-    min-width: 100%;
+    min-width: 525px;
 }
+
 .main__ItemsWindow--itemBox:hover {
     box-shadow: 0 0 10px 5px #711621;
 }
-.Item__about{
+
+.Item__about {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     border: 1px solid hsl(353, 67%, 16%);
-    padding: 5px;
+    padding: 15px;
     overflow: hidden;
+    min-width: 200px;
 }
+
 .Item__img {
     width: 200px;
     max-height: 200px;
-    
 }
 
 .Item__tags {
     margin: 0%;
 }
 
-.Item__title{
-margin: 10px 5px;
-font-weight: bold;
-font-size: 15px;
-color: hsl(0, 0%, 90%);
+.Item__title {
+    margin: 10px 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    color: hsl(0, 0%, 90%);
+    width: 100%;
+    height: 50%;
+    /* overflow: hidden; */
 }
-.Item__desription{
+
+.Item__desription {
+    height: 50%;
+    padding: 5px;
+    overflow: hidden;
     margin: 0%;
     font-size: 13px;
     color: hsl(0, 0%, 50%);
 }
-.Item__Tag__Btn{
+
+.Item__Tag__Btn {
     display: flex;
     flex-direction: column;
     min-width: 120px;
     padding: 5px;
 }
-.download{
+
+.download {
     background-color: #711621;
     color: white;
-    border:none;
-    border:1px solid transparent;
+    border: none;
+    border: 1px solid transparent;
 }
-.more{
-    border:1px solid #711621;
+
+.more {
+    border: 1px solid #711621;
     background-color: transparent;
     color: #711621;
 }
 
-.more:hover{
-    border:1px solid transparent;
+.more:hover {
+    border: 1px solid transparent;
     background-color: #711621;
     color: white;
     box-shadow: 0 0 5px 5px #711621;
 }
-.download:hover{
-    border:1px solid #711621;
+
+.download:hover {
+    border: 1px solid #711621;
     background-color: transparent;
     color: #711621;
     box-shadow: 0 0 10px 5px #711621;
 }
-.Btn{
+
+.Btn {
     margin: 10px;
     padding: 5px;
     min-width: 50%;
+    width: 80%;
     max-width: 100%;
 }
-.about_tags{
+
+.about_tags {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
 }
-.tags{
+
+.tags {
     padding: 5px;
-    border:1px solid hsl(353, 67%, 16%);
+    border: 1px solid hsl(353, 67%, 16%);
+}
+.pagination{
+    list-style: none;
+    display: flex;
+    flex-basis: 30px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.page, .page:visited{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid hsl(353, 67%, 16%);
+    margin: 5px;
+}
+.page:hover{
+    background-color: rgba(113, 22, 33, 0.3);
+    box-shadow: 0 0 10px 2px #711621;
+}
+.page:active{
+    background-color: rgba(36, 7, 10, 0.3);
+    box-shadow: 0 0 10px 5px #711621;
 }
