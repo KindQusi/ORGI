@@ -86,14 +86,20 @@
     <div class="main">
         <div class="main__sidebar">
             <h3>Kategorie</h3>
-            <ul class="main__Categories">
+            <form action="?">
+                <input class="filters__input" name="taginput">
+                <button class="filters__button">Filtruj</button>
+            </form>
+            
+
+            <!-- <ul class="main__Categories">
                 <li class="main__Category">Memy</li>
                 <li class="main__Category">Memy</li>
                 <li class="main__Category">Memy</li>
                 <li class="main__Category">Memy</li>
                 <li class="main__Category">Memy</li>
                 <li class="main__Category">Memy</li>
-            </ul>
+            </ul> -->
         </div>
         <div class="main__ItemsWindow">
 
