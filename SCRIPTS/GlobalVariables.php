@@ -181,6 +181,7 @@
 
     $savedCategory  = 'savedCategory';
     $pageCounter    = 'pageCounter'; 
+    $searchInput    = 'taginput';
 
     ///////////////////////////
     // Ustawienia

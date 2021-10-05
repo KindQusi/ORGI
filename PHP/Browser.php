@@ -21,14 +21,23 @@
         // Zapisujemy dane wejściowe
         $_SESSION[$savedCategory] = $_POST[$category_ChooseCategoryForm];
         $_SESSION[$pageCounter] = 1;
+        $_SESSION[$searchInput] = null;
         // Wyświetlamy bez tagu
         $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm],$_SESSION[$pageCounter]);
     }
     // Gdy użytkownik już jest tu chwilkę i prawdopodbnie wybierze tag/kategorie?
     else
     {
-        $_SESSION[$pageCounter] = $_GET["page"];
-        $files = GetFileWithInfo($_SESSION[$savedCategory],$_SESSION[$pageCounter],null);
+        if ( isset($_GET["page"]));
+            $_SESSION[$pageCounter] = $_GET["page"];
+        // Gdy dostaniemy Tag
+        if ( isset($_POST[$searchInput]) )
+            $_SESSION[$searchInput] = $_POST[$searchInput];
+        // Gdy Dostaniemy tag a użytkownik czegoś już szukał != 1 strona
+        if ( $_SESSION[$pageCounter] > 1 && isset ( $_POST[$searchInput] ) )
+            $_SESSION[$pageCounter] = 1;
+
+        $files = GetFileWithInfo($_SESSION[$savedCategory],$_SESSION[$pageCounter],$_SESSION[$searchInput]);
     }
     
 ?>
@@ -86,7 +95,7 @@
     <div class="main">
         <div class="main__sidebar">
             <h3>Kategorie</h3>
-            <form action="?">
+            <form action="Browser.php?page=1" method="POST">
                 <input class="filters__input" name="taginput">
                 <button class="filters__button">Filtruj</button>
             </form>
@@ -139,7 +148,7 @@
                 <div class="about_tags">
                     <div class="Item__about">
                         <p class="Item__title"> <?php echo 'Browser.php?page='.$_SESSION[$pageCounter]?> </p>
-                        <p class="Item__desription">iksde Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, officia reprehenderit nemo amet commodi quasi iure quia dolorum numquam quos!</p>
+                        <p class="Item__desription">$_SESSION[$searchInput]: <?php echo $_SESSION[$searchInput]?></p>
                     </div>
                     <div class="tags">
                         <p class="Item__tags">Lorem.</p>

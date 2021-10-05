@@ -27,6 +27,9 @@
         $db = new Database();
 
         // Liczymy które rzeczy chcemy zaleznie od nr strony
+        // Startujemy od 0 i następne strony od konkretnego indexu
+        // str 1 index 0,1
+        // str 2 index 2,3 itp.
         $startFrom = 0 + ( ($page - 1) * $maxDisplayedFilesInBrowser);
 
         $infoCategory = WhatCategory($category);
@@ -47,7 +50,8 @@
                 `{$target_table}`
                 ORDER BY
                 `{$fileName_UploadsTable_Col}`
-                ASC LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser;              
+                ASC 
+                LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser;              
         }
         else
         {
@@ -59,7 +63,7 @@
                 FROM 
                 `{$target_table}`
                 WHERE
-                `{$Tag_UploadsTable_Col}` = '{$tag}'
+                `{$Tag_UploadsTable_Col}`  = '{$tag}'
                 OR
                 `{$Tag1_UploadsTable_Col}` = '{$tag}'
                 OR
@@ -70,7 +74,10 @@
                 `{$Tag4_UploadsTable_Col}` = '{$tag}'
                 OR
                 `{$Tag5_UploadsTable_Col}` = '{$tag}'
-                ASC LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser; 
+                ORDER BY
+                `{$fileName_UploadsTable_Col}`
+                ASC 
+                LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser; 
         }
 
         $result = $db ->query($query);
