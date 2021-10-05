@@ -9,7 +9,7 @@
     Niepotrzebne filemanager? Gdyby zapisać dodatkowo rozszerzenie możemy podać
     całą ścieżkę bez skanowania fodleru
 */
-    function GetFileWithInfo (string $category, string $tag = null)
+    function GetFileWithInfo (string $category,int $page = 1 ,string $tag = null)
     {
         include 'GlobalVariables.php';
         include 'database.php';
@@ -25,6 +25,9 @@
 
         $result = null;
         $db = new Database();
+
+        // Liczymy które rzeczy chcemy zaleznie od nr strony
+        $startFrom = 0 + ( ($page - 1) * $maxDisplayedFilesInBrowser);
 
         $infoCategory = WhatCategory($category);
         // Tablica informacji
@@ -42,7 +45,9 @@
                 *
                 FROM 
                 `{$target_table}`
-                ";  
+                ORDER BY
+                `{$fileName_UploadsTable_Col}`
+                ASC LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser;              
         }
         else
         {
@@ -65,7 +70,7 @@
                 `{$Tag4_UploadsTable_Col}` = '{$tag}'
                 OR
                 `{$Tag5_UploadsTable_Col}` = '{$tag}'
-                ";
+                ASC LIMIT ".$startFrom.','.$maxDisplayedFilesInBrowser; 
         }
 
         $result = $db ->query($query);

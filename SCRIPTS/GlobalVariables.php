@@ -175,6 +175,17 @@
     // Tagi , nazwe itp
     ///////////////////////////
 
-    //$Photos_usersUploads = 'Zdjecia';
+    ///////////////////////////
+    // Przeglądanie plików
+    ///////////////////////////
+
+    $savedCategory  = 'savedCategory';
+    $pageCounter    = 'pageCounter'; 
+
+    ///////////////////////////
+    // Ustawienia
+    ///////////////////////////
+
+    $maxDisplayedFilesInBrowser = 2;
 
 ?>

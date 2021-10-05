@@ -10,14 +10,25 @@
 
     $files = null;
 
+    // Musimy być zalogowani
     if( ! isset($_SESSION[$isLogged]) )
     {
         header('Location: ../PHP/LogRegForm2.php'); // Uzytkownika cofamy do strony logowania
     }
-    Sprawdzamy czy mamy kategorie
+    // Pierwsze wejście , musimy zapisać kategorie
     else if ( isset ($_POST[$category_ChooseCategoryForm]))
     {
-        $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm]);//$fileManager -> LoadFiles($_POST[$category_ChooseCategoryForm]);
+        // Zapisujemy dane wejściowe
+        $_SESSION[$savedCategory] = $_POST[$category_ChooseCategoryForm];
+        $_SESSION[$pageCounter] = 1;
+        // Wyświetlamy bez tagu
+        $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm],$_SESSION[$pageCounter]);
+    }
+    // Gdy użytkownik już jest tu chwilkę i prawdopodbnie wybierze tag/kategorie?
+    else
+    {
+        $_SESSION[$pageCounter] = $_GET["page"];
+        $files = GetFileWithInfo($_SESSION[$savedCategory],$_SESSION[$pageCounter],null);
     }
     
 ?>
@@ -116,12 +127,12 @@
                 }
             }
         ?>
-
+        
         <div class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="../uploads/zdjecia/1.png" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
-                        <p class="Item__title">Lorem, ipsum dolor. </p>
+                        <p class="Item__title"> <?php echo 'Browser.php?page='.$_SESSION[$pageCounter]?> </p>
                         <p class="Item__desription">iksde Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, officia reprehenderit nemo amet commodi quasi iure quia dolorum numquam quos!</p>
                     </div>
                     <div class="tags">
@@ -135,13 +146,29 @@
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
             </div>
+          
                 <ul class="pagination">
-                    <li><a href="#0" class="page">| <<</a></li>
-                    <li><a href="#1" class="page"><<</a></li>
-                    <li><a href="#2" class="page">1</a></li>
-                    <li><a href="#3" class="page">2</a></li>
-                    <li><a href="#4" class="page">>></a></li>
-                    <li><a href="#5" class="page">>> |</a></li>
+                    <li><a href="<?php echo 'Browser.php?page=1' ?>" class="page">| <<</a></li>
+                    <li><a href="
+                    <?php 
+                        if ($_SESSION[$pageCounter] - 1 > 0)
+                            echo 'Browser.php?page='.$_SESSION[$pageCounter] - 1;
+                        else
+                            echo 'Browser.php?page=1';
+                    ?>" 
+                    class="page"><<</a></li>
+                    <!--
+                        <li><a href="#2" class="page">1</a></li>
+                        <li><a href="#3" class="page">2</a></li>
+                    -->
+                    <li><a href="
+                    <?php 
+                        echo 'Browser.php?page='.$_SESSION[$pageCounter] + 1 
+                    ?>" 
+                    class="page">>></a></li>
+                    <!--
+                        <li><a href="#5" class="page">>> |</a></li>
+                    -->
                 </ul>
         </div>
     </div>
