@@ -82,6 +82,8 @@
 
             </div>
             <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia">
+            <input class="sendCategory" type="submit" name="sendCategory" value="Felietony">
+            <input class="sendCategory" type="submit" name="sendCategory" value="Opowiadania">
         </form>
     </div>
     <script src="../JS/Categories.js"></script>
