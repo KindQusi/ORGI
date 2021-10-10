@@ -115,14 +115,23 @@
             {
                 // Narazie tylko dla obrazka 
                 // sciezka obrazka = sciezka pobrania
-                
-                $preparedFiles[$i][0] = $target_dir.$file[$fileID_UploadsTable_Col].'.'.$file[$typeFile_UploadsTable_Col]; 
+                if ($category == $categoryPhoto)
+                {
+                    $preparedFiles[$i][0] = $target_dir.$file[$fileID_UploadsTable_Col].'.'.$file[$typeFile_UploadsTable_Col];
+                }
+                else 
+                {
+                    // Domyślny obrazek narazie logo
+                    $preparedFiles[$i][0] = '../Photos/orgilogo_białe.png';
+                }
                 $preparedFiles[$i][1] = $target_dir.$file[$fileID_UploadsTable_Col].'.'.$file[$typeFile_UploadsTable_Col];
                 $preparedFiles[$i][2] = $file[$fileName_UploadsTable_Col]; // Usunąć rozszerzenie?
                 $preparedFiles[$i][3] = $file[$descr_UploadsTable_Col];
-                $preparedFiles[$i][4] = $file[$Tag_UploadsTable_Col];
+                $preparedFiles[$i][4] = $file[$typeFile_UploadsTable_Col];
+                $preparedFiles[$i][5] = $file[$Tag_UploadsTable_Col];
                 
             }
+            
             /* 
             DO TESTOWANIA PAGINACJI
             while ($x < 1 )

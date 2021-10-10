@@ -41,14 +41,17 @@
             if ($target_dir == null || $target_table == null)
                 throw new Exception("Brak lub zła kategoria");
 
-            /*
+            //TODO
+            // TWORZY I WYWALA ERROR
+            
             // Tworzymy folder na dane jeżeli nie istnieje
             // 0777 jest to dostępność , ignorowana na widnowsie
             // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne
             if (!is_dir($target_dir))
-                if ( ! mkdir($target_dir, 0777, true) );
-                    throw new Exception("Nie udalo się utworzyć folderu dla tego pliku !!  " . $target_dir );
-            */
+                mkdir($target_dir, 0777);
+            if (!is_dir($target_dir))   
+                throw new Exception("Nie udalo się utworzyć folderu dla tego pliku !!  " . $target_dir );
+            
 
             // Do łączenia z bazą danych 
             $db = new Database();
@@ -57,10 +60,16 @@
             // Zbieramy potrzebne dane do wpisu
             // O dodającym
             $user = $_SESSION[$userCredits];
-            //unserialize($user);
             $userID = $user->GetUserId();
 
-            $fileName = $_FILES[$file_AddFileForm]['name'];
+            // Gdy będzie nazwa za długa przy wstawianiu go przytnie i system się wysypie
+            if ( strlen($_FILES[$file_AddFileForm]['name']) >= 30  )
+                throw new Exception("Maksymalna ilość znaków to 30. Zmień nazwę");
+
+            // Obcinamy typ , zapisujemy go osobno
+            $fileName = array_values(explode(".",$_FILES[$file_AddFileForm]['name']) )[0];
+           
+
             $query = 
             "SELECT 
             `{$fileID_UploadsTable_Col}`
@@ -72,11 +81,11 @@
             `{$userID_UploadsTable_Col}` = '{$userID}'
             ";
 
-            $resualt = $db->query($query);
+            $result = $db->query($query);
 
             // 2.
             // Sprawdzamy czy mamy coś już takiego      
-            if ( $resualt->num_rows != 0 )
+            if ( $result->num_rows != 0 )
                 throw new Exception("Wrzuciłeś juz taki plik");
 
             // 3.
@@ -158,6 +167,7 @@
 
             // 4.
             // Wyszukujemy naszego dodanego np zdjęcia
+            
             $query = 
             "SELECT 
             `{$fileID_UploadsTable_Col}`
@@ -168,6 +178,7 @@
             AND
             `{$userID_UploadsTable_Col}` = '{$userID}'
             ";
+
             // Prosimy o wynik
             $record = $db->query($query);
             // Sprawdzamy jego ID
@@ -178,10 +189,6 @@
                 {
                     // Bierzemy ID      
                     $id = $row[$fileID_UploadsTable_Col];
-                    // Oddzielamy nazwę i rozszerzenie
-                    //$temp = explode(".", $_FILES[$file_AddFileForm]["name"]);
-                    //$info = pathinfo($_FILES[$file_AddFileForm]["name"]);
-                    //$ext = $info['extension'];
                     // Bierzemy ID i rozszerzenie
                     $newfilename = $id . '.' . $ext;
                     // Robimy ścieżkę zapisu z nową nazwą
@@ -190,6 +197,7 @@
             }
             else
                 throw new Exception("Nie uzyskaliśmy wyniku naszego wcześniejszego wrzutu");
+                // MOZE BYC ZA DLUGA NAZWA
 
             
             // Tworzymy folder na dane jeżeli nie istnieje

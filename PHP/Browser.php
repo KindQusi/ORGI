@@ -123,7 +123,7 @@
                 <img class="Item__img" src="<?php echo $files[$i][0]; ?> ?>" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
-                        <p class="Item__title"> <?php echo array_values(explode(".",$files[$i][2]) )[0]; ?> </p>
+                        <p class="Item__title"> <?php echo $files[$i][2] ?> </p>
                         <p class="Item__desription"><?php echo $files[$i][3]; ?></p>
                     </div>
                     <div class="tags">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="Item__Tag__Btn">
                     <button class="more Btn">Wincyj</button>
-                    <a href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2]; ?>"><button class="download Btn" >Pobierz</button></a>
+                    <a href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2].'.'.$files[$i][4]; ?>"><button class="download Btn" >Pobierz</button></a>
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
