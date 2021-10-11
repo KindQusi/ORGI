@@ -1,4 +1,11 @@
 <?php
+    ///////////////////////////
+    // Ustawienia
+    ///////////////////////////
+
+    $maxDisplayedFilesInBrowser = 5;
+
+
         // Skrypty PHP
     ///////////////////////////
     // Ścieżki
@@ -100,6 +107,16 @@
     - poezja.
     */
 
+    ///////////////////////////
+    // Przeglądanie plików
+    ///////////////////////////
+
+    $savedCategory  = 'savedCategory';
+    $pageCounter    = 'pageCounter'; 
+    $searchInput    = 'taginput';
+
+    
+
         // Bazy danych
     ///////////////////////////
     // Tablica użytkowników
@@ -111,6 +128,17 @@
     $pass_UsersTable_Col    = 'Haslo';
     $email_UsersTable_Col   = 'Email';
     $id_UsersTable_Col      = 'ID';
+
+    $SumOfPhoto_UsersTable      = 'SumOfPhoto';
+    
+    $SumOfEfect_UsersTable      = 'SumOfEfect';
+    $SumOfBgmusic_UsersTable    = 'SumOfBgmusic';
+    $SumOfPlay_UsersTable       = 'SumOfPlay';
+    $SumOfReportage_UsersTable  = 'SumOfReportage';
+
+    $SumOfColumns_UsersTable    = 'SumOfColumns';
+    $SumOfStories_UsersTable    = 'SumOfStories';
+    $SumOfPoem_UsersTable       = 'SumOfPoem';
 
     ///////////////////////////
     // Tablice na wrzuty 
@@ -153,13 +181,17 @@
     3. Teksty
     - felietony
     - opowiadania
-    - poezja.
+    - poezja
     */
 
+    ///////////////////////////
+    // Kolumny w tablicach na
+    // każdą kategorię
+    ///////////////////////////
     $fileID_UploadsTable_Col     = 'ID';
     $userID_UploadsTable_Col     = 'ID_USER';
     $fileName_UploadsTable_Col   = 'NazwaPliku';
-    $typeFile_UploadsTable_Col   = 'Typ'; // TODO
+    $typeFile_UploadsTable_Col   = 'Typ';
     $descr_UploadsTable_Col      = 'Opis';
 
     $Tag_UploadsTable_Col        = 'Tag';
@@ -169,24 +201,8 @@
     $Tag4_UploadsTable_Col       = 'Tag4';
     $Tag5_UploadsTable_Col       = 'Tag5';
 
-    ///////////////////////////
-    // Tablica przechowująca informacje 
-    // na temat wrzutów danego użytkownika
-    // Tagi , nazwe itp
-    ///////////////////////////
+    $DownloadCounter_Col         = 'Ile_pobran';
 
-    ///////////////////////////
-    // Przeglądanie plików
-    ///////////////////////////
-
-    $savedCategory  = 'savedCategory';
-    $pageCounter    = 'pageCounter'; 
-    $searchInput    = 'taginput';
-
-    ///////////////////////////
-    // Ustawienia
-    ///////////////////////////
-
-    $maxDisplayedFilesInBrowser = 2;
+   
 
 ?>

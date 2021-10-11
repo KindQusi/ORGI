@@ -2,27 +2,23 @@
 -- A. Baza użytkowników 
 
 CREATE TABLE Uzytkownicy (
-ID      int          Not Null AUTO_INCREMENT,
-Nick    VARCHAR(20)  Not Null,
-Haslo   VARCHAR(256) Not Null,
-Email   VARCHAR(50)  Not Null,
+ID      INT          NOT Null AUTO_INCREMENT,
+Nick    VARCHAR(20)  NOT Null,
+Haslo   VARCHAR(256) NOT Null,
+Email   VARCHAR(50)  NOT Null,
+-- Pierwsza kategoria
+SumOfPhoto       INT NOT NULL,
+-- Druga kategoria
+SumOfEfect       INT NOT NULL,
+SumOfBgmusic     INT NOT NULL,
+SumOfPlay        INT NOT NULL,
+SumOfReportage   INT NOT NULL,
+-- Trzecia kategoria
+SumOfColumns     INT NOT NULL,
+SumOfStories     INT NOT NULL,
+SumOfPoem        INT NOT NULL,
 PRIMARY KEY (ID)
-);
-
-/*
--- B. Baza wrzuconych rzeczy ( ile czego konkretnie kto wrzucił )
--- Dla każdego użytkownika będzie utworzona taka Baza tak aby
--- przechowywać jego rzeczy
-
--- *ID_USER*_Uploads
- CREATE TABLE uzytkownik (
-ID          int          NOT NULL AUTO_INCREMENT,
-NazwaPliku  VARCHAR(30)  NOT NULL,
-Opis        VARCHAR(256) NOT NULL,
-Tagi        VARCHAR(256) NOT NULL,
-PRIMARY KEY (ID)
-);
-*/
+)
 
 -- B. v2 Baza wrzuconych rzeczy
 -- Każda kategoria będzie przechowywana osobno
@@ -32,10 +28,11 @@ PRIMARY KEY (ID)
 
 -- Może dodać ile razy pobrane?
 -- Zdjęcia maxymalna ilość tagów
+
 {Zdjecia/Sluchowiska itp}
-CREATE TABLE Zdjecia (
-ID          int          NOT NULL AUTO_INCREMENT,
-ID_USER     int          NOT NULL, -- Osoba dodajaca
+CREATE TABLE zdjecia (
+ID          INT          NOT NULL AUTO_INCREMENT,
+ID_USER     INT          NOT NULL, -- Osoba dodajaca
 NazwaPliku  VARCHAR(30)  NOT NULL,
 Typ         VARCHAR(30)  NOT NULL,
 Opis        TEXT         NOT NULL, -- longtxt?
@@ -45,23 +42,9 @@ Tag2        VARCHAR(40) ,
 Tag3        VARCHAR(40) ,
 Tag4        VARCHAR(40) ,
 Tag5        VARCHAR(40) ,
+Ile_pobran  INT         NOT NULL, 
 PRIMARY KEY (ID),
 FOREIGN KEY(ID_USER) REFERENCES Uzytkownicy(ID)
-);
-
-
--- C. Baza zliczająca ogólne zasoby
-
-CREATE TABLE suma (
-Suma_wszystkiego int PRIMARY KEY,
-Suma_fotografie int,
-Suma_efekty int,
-Suma_podklady int,
-Suma_sluchowiska int,
-Suma_reportaze int,
-Suma_felietony int,
-Suma_opowiadani int,
-Suma_poezja int
 );
 
 --    2. ZAPYTANIA

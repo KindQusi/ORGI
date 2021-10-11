@@ -85,17 +85,6 @@
         if ($result -> num_rows > 0)
         {
             /*  
-                TODO ułożyć tablice
-                [0] musi być adres folderu np ../uploads/poezja/
-                [1][0] Nazwa pliku na serwerze (id) + rozszerzenie
-                [1][1] Oryginalna nazwa pliku
-                [1][2] Opis pliku
-                TODO
-                [1][3][0 - 5] Tagi?
-                [1][4] Nazwa autora?
-                [1][5] Ilosc pobran?
-                [1][6] Ilosc polubień?
-
                 v2
                     To pozwoli od razu przypisac np tekstowi domyslna ikonke
                     tak aby w browserze tylko powstawiać linki w odpowiednie miejsca
@@ -103,11 +92,12 @@
                 [0][1] Sciezka do pobrania  dir.id.type
                 [0][2] Oryginalna nazwa
                 [0][3] Opis pliku
+                [0][4] Typ pliku ( Rozszerzenie )
                 TODO
-                [0][4][0 - 5] Tagi?
-                [0][5] Nazwa autora?
-                [0][6] Ilosc pobran?
-                [0][7] Ilosc polubień?
+                [0][5][0 - 5] Tagi?
+                [0][6] Nazwa autora?
+                [0][7] Ilosc pobran?
+                [0][8] Ilosc polubień?
 
             */
             

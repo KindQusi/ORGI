@@ -46,9 +46,9 @@
             
             // Tworzymy folder na dane jeżeli nie istnieje
             // 0777 jest to dostępność , ignorowana na widnowsie
-            // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne
+            // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne gdy nie mamy folderu uploads
             if (!is_dir($target_dir))
-                mkdir($target_dir, 0777);
+                mkdir($target_dir, 0777,true);
             if (!is_dir($target_dir))   
                 throw new Exception("Nie udalo się utworzyć folderu dla tego pliku !!  " . $target_dir );
             
@@ -197,14 +197,7 @@
             }
             else
                 throw new Exception("Nie uzyskaliśmy wyniku naszego wcześniejszego wrzutu");
-                // MOZE BYC ZA DLUGA NAZWA
-
-            
-            // Tworzymy folder na dane jeżeli nie istnieje
-            // 0777 jest to dostępność , ignorowana na widnowsie
-            // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne
-            //if (!is_dir($target_file))
-                //mkdir($rootUploads . $target_dir, 0777, true);    
+                // MOZE BYC ZA DLUGA NAZWA 
 
             // 5.
             // Wstawiamy plik 
@@ -234,6 +227,11 @@
                 'Udalo się dodać nowy plik: ' 
                 . $fileName.
                 ' . Dziękujemy za poszerzanie wspólnej biblioteki :)';
+
+                /*
+                    TODO 
+                    Zwiększanie licznika wrzuconych rzeczy przez użytkownika
+                */
                 header('Location: ../PHP/Addfile.php');
             }
         }
