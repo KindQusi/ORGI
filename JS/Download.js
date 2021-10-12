@@ -3,20 +3,23 @@ const downloadbtns=document.querySelectorAll(".download");
 
 downloadbtns.forEach((button,index)=>{
   button.addEventListener("click", function() {
-    const id=document.querySelector(`.id${index}`);
-    const category=document.querySelector(`.category${index}`);
+    let setid=0;
+    let setcategory="";
+    const id=document.querySelectorAll(`.id`);
+    const category=document.querySelectorAll(`.category`);
 
     console.log("You clicked button number " + index);
     console.log("You clicked button with class " + this.className);
     console.log("You clicked button with text " + this.innerText);
 
 
-    console.log(id);
-    console.log(category);
+    console.log(id[index].value);
+    console.log(category[index].value);
     $.ajax({
       url: '../SCRIPS/UpdateDownloadCounter.php',
       type: 'post',
-      data: { "callFunc1": `${button.id}` },
+      id: { "callFunc1": id[index].value },
+      category:{"callFunc2": category[index].value },
       success: function (response) {
           console.log(response);
       }

@@ -42,6 +42,8 @@
         {
             echo $e;
         }
-
     }
+    // if (isset($_POST['callFunc1'])&&isset($_POST['callFunc2'])) {
+    //     echo test($_POST['callFunc1'],$_POST['callFunc2']);
+    //  }
 ?>
