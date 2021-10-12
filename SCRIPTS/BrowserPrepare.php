@@ -93,11 +93,12 @@
                 [0][2] Oryginalna nazwa
                 [0][3] Opis pliku
                 [0][4] Typ pliku ( Rozszerzenie )
-                TODO
                 [0][5][0 - 5] Tagi?
-                [0][6] Nazwa autora?
-                [0][7] Ilosc pobran?
-                [0][8] Ilosc polubień?
+                [0][6] ID pliku
+                TODO
+                [0][] Nazwa autora?
+                [0][] Ilosc pobran?
+                [0][] Ilosc polubień?
 
             */
             
@@ -119,6 +120,7 @@
                 $preparedFiles[$i][3] = $file[$descr_UploadsTable_Col];
                 $preparedFiles[$i][4] = $file[$typeFile_UploadsTable_Col];
                 $preparedFiles[$i][5] = $file[$Tag_UploadsTable_Col];
+                $preparedFiles[$i][6] = $file[$fileID_UploadsTable_Col];
                 
             }
             
