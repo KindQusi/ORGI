@@ -110,7 +110,7 @@
                 <li class="main__Category">Memy</li>
             </ul> -->
         </div>
-        <div class="main__ItemsWindow">
+        <form action="../SCRIPTS/UpdateDownloadCounter.php" method="POST" class="main__ItemsWindow">
 
         <?php
             if ( !empty($files))
@@ -188,7 +188,7 @@
                     -->
                 </ul>
         </div>
-    </div>
+        </form>
     <script scr="../JS/Download.js"></script>
 </body>
 </html>
