@@ -110,7 +110,7 @@
                 <li class="main__Category">Memy</li>
             </ul> -->
         </div>
-        <form action="../SCRIPTS/UpdateDownloadCounter.php" method="POST" class="main__ItemsWindow">
+        <div class="main__ItemsWindow">
 
         <?php
             if ( !empty($files))
@@ -119,7 +119,7 @@
                 {         
         ?>
 
-            <div class="main__ItemsWindow--itemBox">
+            <form action="../SCRIPTS/UpdateDownloadCounter.php" method="POST" class="main__ItemsWindow--itemBox">
                 <img class="Item__img" src="<?php echo $files[$i][0]; ?> ?>" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
@@ -138,7 +138,7 @@
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
-            </div>
+             </form>
         
         <?php                    
                 }
@@ -188,7 +188,7 @@
                     -->
                 </ul>
         </div>
-        </form>
+    </div>
     <script scr="../JS/Download.js"></script>
 </body>
 </html>
