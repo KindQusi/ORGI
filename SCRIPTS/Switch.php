@@ -1,5 +1,5 @@
 <?php
-    function WhatCategory ($category)
+    function WhatCategory (string $category)
     {
         include 'GlobalVariables.php';
 
@@ -45,10 +45,8 @@
         
         // Dodać kolejne kategorie
     }
-        // Jeżeli zła kategoria
-        if ($target_table == null || $target_dir == null)
-            return null;  
-        // Zapisujemy wynik
+
+        // Zwracamy wynik
         return array($target_dir , $target_table);
     } 
 ?>

@@ -19,16 +19,17 @@
     else if ( isset ($_POST[$category_ChooseCategoryForm]))
     {
         // Zapisujemy dane wejściowe
+       
         $_SESSION[$savedCategory] = $_POST[$category_ChooseCategoryForm];
         $_SESSION[$pageCounter] = 1;
         $_SESSION[$searchInput] = null;
         // Wyświetlamy bez tagu
-        $files = GetFileWithInfo($_POST[$category_ChooseCategoryForm],$_SESSION[$pageCounter]);
+        $files = GetFileWithInfo($_SESSION[$savedCategory],$_SESSION[$pageCounter]);
     }
     // Gdy użytkownik już jest tu chwilkę i prawdopodbnie wybierze tag/kategorie?
     else
     {
-        if ( isset($_GET["page"]));
+        if ( isset($_GET["page"]))
             $_SESSION[$pageCounter] = $_GET["page"];
         // Gdy dostaniemy Tag
         if ( isset($_POST[$searchInput]) )
@@ -132,8 +133,8 @@
                 </div>
                 <div class="Item__Tag__Btn">
                     <button class="more Btn">Wincyj</button>
-                    <input type="text" class="id" name="id"       value="<?php echo $files[$i][6] ?>" hidden><!-- id produktu  -->
-                    <input type="text" class="category" name="category" value="<?php echo $_SESSION[$savedCategory] ?>" hidden><!-- kategoria produktu  -->
+                    <input type="text" class="id"       name="<?php echo $fileID ?>"       value="<?php echo $files[$i][6] ?>" hidden><!-- id produktu  -->
+                    <input type="text" class="category" name="<?php echo $fileCategory ?>" value="<?php echo $_SESSION[$savedCategory] ?>" hidden><!-- kategoria produktu  -->
                     <a href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2].'.'.$files[$i][4]; ?>"><button class="download Btn" >Pobierz</button></a>
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>

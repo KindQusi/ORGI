@@ -115,7 +115,13 @@
     $pageCounter    = 'pageCounter'; 
     $searchInput    = 'taginput';
 
+    $fileID         = 'fileID';
+    $fileCategory   = 'fileCategory';
     
+    ///////////////////////////
+    // UPDATEDOWNLOADCOUNTER
+    ///////////////////////////
+    $DownloadedIDs  = 'DownloadedIDs'; 
 
         // Bazy danych
     ///////////////////////////

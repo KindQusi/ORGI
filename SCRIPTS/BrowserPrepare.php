@@ -35,9 +35,12 @@
         $infoCategory = WhatCategory($category);
         // Tablica informacji
         // 0 - Target_dir
-        // 1 - Target_table
+        // 1 - Target_table  
         $target_dir = $infoCategory[0];
         $target_table = $infoCategory[1];
+
+        // if ($target_dir == null || $target_table == null)
+        //     throw new Exception($target_table.' '.$target_dir);
 
         // Gdy nie mamy tagu
         if ( $tag == null)
