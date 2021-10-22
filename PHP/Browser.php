@@ -129,7 +129,7 @@
         ?>
 
             <form action="../SCRIPTS/UpdateDownloadCounter.php" method="POST" class="main__ItemsWindow--itemBox">
-                <img class="Item__img" src="<?php echo $files[$i][0]; ?> ?>" alt="">
+                <img class="Item__img" src="<?php echo $files[$i][0];?>" alt="">
                 <div class="about_tags">
                     <div class="Item__about">
                         <p class="Item__title"> <?php echo $files[$i][2] ?> </p>
