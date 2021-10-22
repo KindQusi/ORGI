@@ -1,9 +1,9 @@
 <?php
     /*
-    $Host="fdb29.awardspace.net";
-    $db_user="3662264_sssss";
-    $db_password="iHjg6.YrfPUgH#.";
-    $db_name="3662264_sssss";
+    $Host="fdb33.awardspace.net";
+    $db_user="3969497_orgi";
+    $db_password="pQvm3Wwc5pL!@Wp4";
+    $db_name="3969497_orgi";
     */
     $Host="localhost";
     $db_user="root";

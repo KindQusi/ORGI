@@ -1,7 +1,7 @@
 --    1. TABELE
 -- A. Baza użytkowników 
 
-CREATE TABLE Uzytkownicy (
+CREATE TABLE uzytkownicy (
 ID      INT          NOT Null AUTO_INCREMENT,
 Nick    VARCHAR(20)  NOT Null,
 Haslo   VARCHAR(256) NOT Null,
@@ -30,22 +30,22 @@ PRIMARY KEY (ID)
 -- Zdjęcia maxymalna ilość tagów
 
 {Zdjecia/Sluchowiska itp}
-CREATE TABLE zdjecia (
-ID          INT          NOT NULL AUTO_INCREMENT,
-ID_USER     INT          NOT NULL, -- Osoba dodajaca
-NazwaPliku  VARCHAR(30)  NOT NULL,
-Typ         VARCHAR(30)  NOT NULL,
-Opis        TEXT         NOT NULL, -- longtxt?
-Tag         VARCHAR(40)  NOT NULL,
-Tag1        VARCHAR(40) ,
-Tag2        VARCHAR(40) ,
-Tag3        VARCHAR(40) ,
-Tag4        VARCHAR(40) ,
-Tag5        VARCHAR(40) ,
-Ile_pobran  INT         NOT NULL, 
-PRIMARY KEY (ID),
-FOREIGN KEY(ID_USER) REFERENCES Uzytkownicy(ID)
-);
+    CREATE TABLE zdjecia (
+    ID          INT          NOT NULL AUTO_INCREMENT,
+    ID_USER     INT          NOT NULL, -- Osoba dodajaca
+    NazwaPliku  VARCHAR(30)  NOT NULL,
+    Typ         VARCHAR(30)  NOT NULL,
+    Opis        TEXT         NOT NULL, -- longtxt?
+    Tag         VARCHAR(40)  NOT NULL,
+    Tag1        VARCHAR(40) ,
+    Tag2        VARCHAR(40) ,
+    Tag3        VARCHAR(40) ,
+    Tag4        VARCHAR(40) ,
+    Tag5        VARCHAR(40) ,
+    Ile_pobran  INT         NOT NULL, 
+    PRIMARY KEY (ID),
+    FOREIGN KEY(ID_USER) REFERENCES uzytkownicy(ID)
+    );
 
 --    2. ZAPYTANIA
 -- A.  Użytkownicy którzy mają konkretny email 
