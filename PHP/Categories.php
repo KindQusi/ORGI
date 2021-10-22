@@ -62,7 +62,7 @@
 
     </header>
     <div class="container">
-        <form class="container__form--category" action="../PHP/Browser.php?page=1" method="POST">
+        <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
             <div class="container__category">
                 <div >
                     <div class="container__category--img container__category--foto" id="imgfoto"></div>

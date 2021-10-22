@@ -5,6 +5,8 @@
 
     $maxDisplayedFilesInBrowser = 5;
 
+    $minUploadForBrowser = 5;
+
 
         // Skrypty PHP
     ///////////////////////////
@@ -52,6 +54,8 @@
     $columnsType_AddFileForm    = 'Felietony';
     $storiesType_AddFileForm    = 'Opowiadania';
     $poemType_AddFileForm       = 'Poezja';
+
+    $addedFile_Flag             = 'addedFile_Flag';
     /*
     1. Fotografia (podkategorie uzależnione od tagowania)
     2. Dźwięki
@@ -117,6 +121,13 @@
 
     $fileID         = 'fileID';
     $fileCategory   = 'fileCategory';
+
+    ///////////////////////////
+    // CheckUser.php
+    ///////////////////////////
+
+    $typeFile_CheckUser = 'typeFile_CheckUser';
+    $userCounter        = 'userCounter';
     
     ///////////////////////////
     // UPDATEDOWNLOADCOUNTER

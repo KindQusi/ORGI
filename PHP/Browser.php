@@ -16,11 +16,12 @@
         header('Location: ../PHP/LogRegForm2.php'); // Uzytkownika cofamy do strony logowania
     }
     // Pierwsze wejście , musimy zapisać kategorie
-    else if ( isset ($_POST[$category_ChooseCategoryForm]))
+    else if ( isset ($_SESSION[$typeFile_CheckUser]))
     {
         // Zapisujemy dane wejściowe
        
-        $_SESSION[$savedCategory] = $_POST[$category_ChooseCategoryForm];
+        $_SESSION[$savedCategory] = $_SESSION[$typeFile_CheckUser];
+        unset($_SESSION[$typeFile_CheckUser]);
         $_SESSION[$pageCounter] = 1;
         $_SESSION[$searchInput] = null;
         // Wyświetlamy bez tagu
