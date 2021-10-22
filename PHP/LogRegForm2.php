@@ -23,7 +23,7 @@
     <title>Document</title>
 </head>
 
-<body class="body">
+<body class="body body__LogReg">
 <header class="header">
         <?php           
             if ( !isset( $_SESSION[$isLogged] ) )
@@ -78,8 +78,8 @@
             <button class="container__button">Logowanie</button>
         </form>
         <div class="container__CenterLogo">
-            <p>ORGI</p>
-            <p>Otwarte Repozytorium Gigabajtów Inspiracji</p>
+        <img class="hedgehog__logo" src="../Photos/Hedgehog_Logo.png" alt="Hedgehog. Page's logo.">
+            <h1 class="hedgehog__logo--title" >Otwarte Repozytorium Gigabajtów Inspiracji</h1>
         </div>
         <form class="container__Registration" action="../SCRIPTS/RegistrationOrLogin.php" method="POST">
             <input type="hidden" class="userAction" name="userAction" value="registration">

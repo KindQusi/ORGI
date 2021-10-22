@@ -1,20 +1,39 @@
+.body__LogReg {
+    background-image: url("../../Photos/logreg_background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hedgehog__logo {
+    width: 400px;
+    height: 400px;
+}
+.hedgehog__logo--title{
+    word-break: break-word;
+    text-align: center;
+    font-weight: bold;
+    font-size: 54px;
+    /* color: rgb(114, 22, 33); */
+    color: white;
+}
 .container {
-    display: grid;
+    display: flex;
     align-self: center;
-    justify-self: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 20% 10%;
-    margin-bottom: 10px;
-    padding: 5px;
+    justify-content: center;
     align-items: center;
+    padding: 5px;
+    min-height: 50vh;
+    height: 100%;
+    max-height: 90vh;
 }
 
 .container__Login {
     max-width: 100%;
     min-width: 150px;
     padding: 20px;
-    height: 100%;
-    background-color: #ffffff27;
+    height: 250px;
+    background-color: rgba(113, 22, 33, 0.85);
     border-radius: 15px;
     display: grid;
     align-items: center;
@@ -50,8 +69,8 @@
     max-width: 100%;
     min-width: 150px;
     padding: 20px;
-    height: 100%;
-    background-color: #ffffff27;
+    height: 250px;
+    background-color: rgba(113, 22, 33, 0.85);
     border-radius: 15px;
     display: grid;
     align-items: center;
@@ -60,18 +79,14 @@
 }
 
 .container__CenterLogo {
-    max-width: 100%;
-    min-width: 150px;
-    height: 100%;
-    padding: 20px;
-    background-color: rgba(53, 58, 64, 0.514);
-    color: white;
-    text-align: center;
-    border-radius: 60% 0%;
+    max-width: 425px;
+    padding: 10px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .container__button {
@@ -91,12 +106,13 @@
     background-color: hsl(213, 16%, 44%);
     color: white;
 }
-.alert{ 
+
+.alert {
     width: 500px;
     margin: 0px auto;
 }
-.alert__error{
-   
+
+.alert__error {
     width: 500px;
     height: 25px;
     color: rgb(255, 255, 255);
