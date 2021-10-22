@@ -5,12 +5,14 @@
 
         $target_dir = null;
         $target_table = null;
+        $target_Counter = null;
 
         switch ($category) {
             //Photos
         case $photoType_AddFileForm:
             $target_table   = $photosUploadTable;
             $target_dir     = $photosUploadFolder;
+            $target_Counter = $SumOfPhoto_UsersTable;
             break;
             //Sounds
         case $efectType_AddFileForm:
@@ -47,6 +49,6 @@
     }
 
         // Zwracamy wynik
-        return array($target_dir , $target_table);
+        return array($target_dir , $target_table , $target_Counter);
     } 
 ?>

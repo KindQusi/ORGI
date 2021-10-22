@@ -34,16 +34,15 @@
             // Tablica informacji
             // 0 - Target_dir
             // 1 - Target_table
-            $target_dir = $infoCategory[0];
-            $target_table = $infoCategory[1];
+            // 2 - target_Counter
+            $target_dir     = $infoCategory[0];
+            $target_table   = $infoCategory[1];
+            $target_Counter = $infoCategory[2];
 
             // Gdy chcemy dodac coś czego nie mamy wywalamy error'a
             if ($target_dir == null || $target_table == null)
                 throw new Exception("Brak lub zła kategoria");
 
-            //TODO
-            // TWORZY I WYWALA ERROR
-            
             // Tworzymy folder na dane jeżeli nie istnieje
             // 0777 jest to dostępność , ignorowana na widnowsie
             // true pozwala rekursywnie utworzyć foldery , tutaj potrzebne gdy nie mamy folderu uploads
@@ -232,7 +231,24 @@
                     TODO 
                     Zwiększanie licznika wrzuconych rzeczy przez użytkownika
                 */
-                header('Location: ../PHP/Addfile.php');
+
+                $query = 
+                "UPDATE 
+                `{$usersTable}`
+                SET
+                `{$target_Counter}` = `{$target_Counter}` + 1
+                WHERE
+                `{$id_UsersTable_Col}` = '{$userID}'
+                ";
+
+                if ( $db->query($query) )
+                {
+                    $_SESSION[$addedFile_Flag] = true;
+                    header('Location: ../PHP/Addfile.php');
+                }
+                else 
+                    throw new Exception("Nie udało się zwiększyć ilości dla użytkownika o".$userID.' w kategori '.$target_Counter.' w tabeli '.$usersTable);
+            
             }
         }
         catch(Exception $e)
