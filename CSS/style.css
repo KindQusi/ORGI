@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
-
 html{
     box-sizing: border-box;
-    height: 100%;
+    
 }
 *,::after,::before{
     box-sizing: inherit;
@@ -12,5 +11,5 @@ html{
     margin: 0px;
     min-width: 580px;
     background-color:#03071E;
-    height: 100%;
+    height: 100vh;
 }
