@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Browser/Browser.css">
 </head>
-<body class="body">
+<body class="body body__Browser">
 <header class="header">
         <?php           
             if ( !isset( $_SESSION[$isLogged] ) )
@@ -198,6 +198,7 @@
                 </ul>
         </div>
     </div>
+    <script src="../JS/Category_Background.js"></script>
     <script src="../JS/Download.js"></script>
 </body>
 </html>

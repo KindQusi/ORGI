@@ -1,3 +1,10 @@
+.body__Browser{
+    /* background-image: url("../../Photos/fotoBG.png"); */
+    background-position: center;
+    background-size: cover;
+    /* background-blend-mode:overlay; */
+    background-blend-mode:soft-light;
+}
 .main {
     width: 100%;
     min-height: 100%;
