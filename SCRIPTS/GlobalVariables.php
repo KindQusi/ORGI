@@ -139,7 +139,7 @@
     // Tablica użytkowników
     ///////////////////////////
 
-    $usersTable = 'Uzytkownicy';
+    $usersTable = 'uzytkownicy';
 
     $login_UsersTable_Col   = 'Nick';
     $pass_UsersTable_Col    = 'Haslo';
