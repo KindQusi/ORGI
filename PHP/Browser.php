@@ -198,6 +198,6 @@
                 </ul>
         </div>
     </div>
-    <script scr="../JS/Download.js"></script>
+    <script src="../JS/Download.js"></script>
 </body>
 </html>
