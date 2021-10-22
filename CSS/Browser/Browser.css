@@ -6,9 +6,11 @@
     justify-content: center;
     min-width: 750px;
 }
-.body{
+
+.body {
     min-width: 750px;
 }
+
 .main__sidebar {
     padding: 15px;
     color: white;
@@ -25,7 +27,7 @@
 }
 
 .main__Category {
-    margin:10px 0px;
+    margin: 10px 0px;
     font-weight: bold;
 }
 
@@ -72,6 +74,7 @@
 
 .Item__tags {
     margin: 0%;
+    font-size: 12px;
 }
 
 .Item__title {
@@ -97,8 +100,19 @@
 .Item__Tag__Btn {
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-width: 120px;
     padding: 5px;
+}
+
+.Item__form {
+    margin: 5px;
+    font-size: 12px;
+}
+
+.Item__size {
+    margin: 5px;
+    font-size: 12px;
 }
 
 .download {
@@ -106,6 +120,9 @@
     color: white;
     border: none;
     border: 1px solid transparent;
+    text-decoration: none;
+    text-align: center;
+    width: 88px;
 }
 
 .more {
@@ -148,15 +165,16 @@
     padding: 5px;
     border: 1px solid hsl(353, 67%, 16%);
 }
-.pagination{
+
+.pagination {
     list-style: none;
     display: flex;
     flex-basis: 30px;
-    
     justify-content: center;
     align-items: center;
 }
-.page, .page:visited{
+
+.page, .page:visited {
     text-align: center;
     color: white;
     text-decoration: none;
@@ -164,11 +182,13 @@
     border: 1px solid hsl(353, 67%, 16%);
     margin: 5px;
 }
-.page:hover{
+
+.page:hover {
     background-color: rgba(113, 22, 33, 0.3);
     box-shadow: 0 0 10px 2px #711621;
 }
-.page:active{
+
+.page:active {
     background-color: rgba(36, 7, 10, 0.3);
     box-shadow: 0 0 10px 5px #711621;
 }
