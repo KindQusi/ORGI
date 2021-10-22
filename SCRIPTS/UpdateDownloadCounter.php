@@ -44,13 +44,13 @@
                 "UPDATE 
                 `{$target_table}`
                 SET
-                `{$DownloadCounter_Col}` = '{$DownloadCounter_Col}' + 1
+                `{$DownloadCounter_Col}` = `{$DownloadCounter_Col}` + 1
                 WHERE
                 `{$fileID_UploadsTable_Col}` = '{$id}'
                 ";
-
-                $db = new Database();
                 
+                $db = new Database();
+
                 if (!$db->query($query))
                     throw new Exception("Problem with db");
                 else 

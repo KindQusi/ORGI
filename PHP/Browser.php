@@ -135,7 +135,7 @@
                     <button class="more Btn">Wincyj</button>
                     <input type="text" class="id"       name="<?php echo $fileID ?>"       value="<?php echo $files[$i][6] ?>" hidden><!-- id produktu  -->
                     <input type="text" class="category" name="<?php echo $fileCategory ?>" value="<?php echo $_SESSION[$savedCategory] ?>" hidden><!-- kategoria produktu  -->
-                     <a class="downloadFile" href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2].'.'.$files[$i][4]; ?>"></a><!--<button class="download Btn" >Pobierz</button> -->
+                     <a class="downloadFile" href ="<?php echo $files[$i][1]; ?>" download="<?php echo $files[$i][2].'.'.$files[$i][4]; ?>">Pobierz</a><!--<button class="download Btn" >Pobierz</button> -->
                     <p class="Item__tags"> np format pliku</p>
                     <p class="Item__tags"> np rozmiar pliku</p>
                 </div>
