@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
 html{
     box-sizing: border-box;
     height: 100%;
@@ -6,6 +8,7 @@ html{
     box-sizing: inherit;
 }
 .body{
+    font-family: 'Paytone One', sans-serif;
     margin: 0px;
     min-width: 580px;
     background-color:#03071E;
