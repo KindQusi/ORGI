@@ -26,3 +26,12 @@
 //     })
 //   })
 // })
+
+const downloadbtns=document.querySelectorAll(".downloadFile");
+
+
+downloadbtns.forEach((button)=>{
+  button.addEventListener("click", function() {
+      button.submit();
+  })
+})
