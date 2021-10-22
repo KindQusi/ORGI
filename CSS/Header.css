@@ -1,19 +1,19 @@
 .header{
-    /* display: flex; */
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+    display: flex;
     margin: 0px;
     background-color: #711621;
     height: 75px;
     /* padding: 10px; */
     align-items: center;
     justify-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    
 }
 .header__logo{
     width: 100px;
 }
 .header__button{
+    flex-basis: 120px;
     font-family: 'Paytone One', sans-serif;
     color: rgb(226, 226, 226);
     border: none; 
@@ -60,14 +60,22 @@
     color: white;
     font-size: 15px;
     text-align: center;
+    
 }
 .hiuser{
   background: rgba(255, 255, 255, 0);
   border: none;
   width: 100px;
   text-align: center;
-  border-right: 1px solid white;
+  font-family: 'Paytone One', sans-serif;
 }
 .hiuser:disabled{
   color: white;
+}
+
+.header_buttonsDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
