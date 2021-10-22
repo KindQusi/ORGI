@@ -103,40 +103,40 @@
             <ul class="gallery__list">
                 <li class="gallery--listitem">
                     <div class="gallery--div">
-                        <p class="gallery__text">Rządzący Razem Tworzymy Lorem, ipsum dolor sit amet consectetur
+                        <p class="gallery__text">Razem Tworzymy Lorem, ipsum dolor sit amet consectetur
                             adipisicing elit. Blanditiis optio, omnis commodi animi aliquam quae quia laborum doloremque
                             aperiam itaque incidunt quas exercitationem porro dolores explicabo iste iure et magnam.</p>
-                        <img class="gallery__image" src="../Photos/Ruler.jpg" alt="">
+                        <img class="gallery__image" src="../Photos/orgilogo_biae.png" alt="">
                     </div>
                 </li>
                 <li class="gallery--listitem">
-                    <div class="gallery--div"><img class="gallery__image" src="../Photos/Priest.webp" alt="">
-                        <p class="gallery__text">Kapłan Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                    <div class="gallery--div"><img class="gallery__image" src="../Photos/orgilogo_biae.png" alt="">
+                        <p class="gallery__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
                             atque consequuntur eos deleniti itaque corrupti quisquam. Animi, veritatis quas quos totam
                             nihil, laborum ea repellat sint, et inventore unde debitis.</p>
                     </div>
                 </li>
                 <li class="gallery--listitem">
                     <div class="gallery--div">
-                        <p class="gallery__text"> Medyk Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                        <p class="gallery__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
                             neque harum necessitatibus nemo veniam reprehenderit ipsam asperiores nesciunt facere.
                             Suscipit aspernatur similique est molestiae hic tenetur quibusdam deleniti voluptates ab.
-                        </p><img class="gallery__image" src="../Photos/Medic.jpg" alt="">
+                        </p><img class="gallery__image" src="../Photos/orgilogo_biae.png" alt="">
                     </div>
                 </li>
                 <li class="gallery--listitem">
-                    <div class="gallery--div"><img class="gallery__image" src="../Photos/Mage.jpg" alt="">
-                        <p class="gallery__text">Mag Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                    <div class="gallery--div"><img class="gallery__image" src="../Photos/orgilogo_biae.png" alt="">
+                        <p class="gallery__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
                             atque consequuntur eos deleniti itaque corrupti quisquam. Animi, veritatis quas quos totam
                             nihil, laborum ea repellat sint, et inventore unde debitis.</p>
                     </div>
                 </li>
                 <li class="gallery--listitem">
                     <div class="gallery--div">
-                        <p class="gallery__text">Nekromanta Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        <p class="gallery__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Nam neque harum necessitatibus nemo veniam reprehenderit ipsam asperiores nesciunt facere.
                             Suscipit aspernatur similique est molestiae hic tenetur quibusdam deleniti voluptates ab.
-                        </p><img class="gallery__image" src="../Photos/Necromancy.jfif" alt="">
+                        </p><img class="gallery__image" src="../Photos/orgilogo_biae.png" alt="">
                     </div>
                 </li>
             </ul>
