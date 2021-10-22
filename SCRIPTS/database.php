@@ -43,7 +43,7 @@ class Database
     private function Open_Connection()
     {
         // Załączamy nasze dane do połączenia
-        require_once 'credits.php';
+        //require_once 'credits.php';
         //require 'credits.php';
         
         $Host="localhost";
