@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Categories/categories.css">
+    <link rel="icon" href="../Photos/Hedgehog_Logo.png">
 </head>
 
 <body class="body">

@@ -40,7 +40,7 @@
         let htmlString = "";
         let i = 0;
         for (const tag of tagstable) {
-            htmlString += `<li class="tagitem"><input name="tag${i}" class="tag" value="${tag.content}"}><button class="js-remove">x</button></li>`;
+            htmlString += `<li class="tagitem"><input name="tag${i}" class="tag" value="${tag.content}"}><button class="js-remove">X</button></li>`;
             i++
         }
         document.querySelector(".tagslist").innerHTML = htmlString;

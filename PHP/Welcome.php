@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/Welcome/Section.css">
+    <link rel="icon" href="../Photos/Hedgehog_Logo.png">
     <title>Welcome in ORGI</title>
 </head>
 

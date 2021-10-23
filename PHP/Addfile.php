@@ -20,10 +20,11 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Addfile/Addfile.css">
+    <link rel="icon" href="../Photos/Hedgehog_Logo.png">
     <title>Document</title>
 </head>
 
-<body class="body">
+<body class="body body__AddFile">
 <header class="header">
         <?php           
             if ( !isset( $_SESSION[$isLogged] ) )
@@ -70,11 +71,16 @@
 
     </header>
         <form class="container__form" action="../SCRIPTS/addingFiles.php" method="POST" enctype="multipart/form-data">
-        <div class="addedfile__div">
-            <label class="addedfile__label" for="">Wybierz typ pliku: </label>
-            <input list="type" class="formtype" name="filetype"> 
-        </div>
-        <img class="addedfile__img" src="" alt="">
+        
+            <div class="addedfile__div">
+                <label class="addedfile__label" for="">Wybierz typ pliku: </label>
+                <input list="type" class="formtype" name="filetype"> 
+                 <div class="img__tags">
+                <img class="addedfile__img" src="" alt="">
+                <p class="tagslist"></p>
+            </div>
+            </div>
+           
         <datalist id="type">
         <option value="">
             <option value="Zdjęcia">
@@ -90,10 +96,12 @@
             <!-- <p class="filename"></p>
             <p class="format"></p>
             <p class="size"></p> -->
-            <input type="text" class="addtags" placeholder="Add Tag">
-            <input type="button" class="addtagsbtn" value="dodaj tag">
-            <p class="tagslist"></p>
-            <textarea class="file__description" placeholder="Opis tu jebnij" name="description"></textarea>
+            <div class="addtags__div">
+                 <input type="text" class="addtags" placeholder="Add Tag">
+                <input type="button" class="addtagsbtn" value="dodaj tag">
+            </div>
+            
+            <textarea class="file__description" placeholder="Dodaj opis" name="description"></textarea>
             <button type="submit" class="uploadbtn">Wyślij plik na serwer</button>
         </form>
         <!--

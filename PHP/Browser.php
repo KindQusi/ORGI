@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../CSS/Browser/Browser.css">
+    <link rel="icon" href="../Photos/Hedgehog_Logo.png">
 </head>
 <body class="body body__Browser">
 <header class="header">
