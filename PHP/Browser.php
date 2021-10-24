@@ -105,6 +105,34 @@
     <div class="main">
         <div class="main__sidebar">
             <h3>Kategorie</h3>
+            <div class="main__sidebar--categories">
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Zdjęcia">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Podkłady">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Efekty">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Słuchiwiska">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Reportaże">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Felietony">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Opowiadania">
+                </form>
+                <form class="container__form--category" action="../SCRIPTS/checkUser.php" method="POST">
+                    <input class="sendCategory" type="submit" name="sendCategory" value="Poezja">
+                </form>
+            </div>
+           
+            <h3>Filtry</h3>
             <form action="Browser.php?page=1" method="POST">
                 <input class="filters__input" name="taginput">
                 <button class="filters__button">Filtruj</button>
